@@ -23,7 +23,7 @@ export function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section with Live Florida Environment & Huge Action Calling Bar */}
         <Hero />
 
         {/* Quick Credibility Trust Bar */}
@@ -41,7 +41,7 @@ export function App() {
         {/* Real Field Showcase / Authentic Photo Gallery */}
         <Gallery />
 
-        {/* Why Choose Iguana Control Authority & Avi Ezra */}
+        {/* Why Choose Iguana Control Authority */}
         <WhyUs />
 
         {/* South Florida Service Areas & Dispatch Truck Coverage */}

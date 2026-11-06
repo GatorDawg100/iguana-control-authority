@@ -44,19 +44,19 @@ export const ContactForm: React.FC = () => {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-3">
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Schedule Service • Free On-Site Estimate</span>
+            <span>Schedule Service • Free On-Site Inspection</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading uppercase tracking-wide">
             Protect Your Property Today
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-2">
-            Fill out the form below or contact Avi Ezra directly. Our work truck will drive out to inspect your property and provide an ethical, guaranteed solution.
+            Fill out the form below or contact our hotline directly. Our work truck will drive out to inspect your property and provide an ethical, guaranteed solution.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Direct Business Contact Information */}
           <div className="lg:col-span-5 space-y-6">
@@ -69,29 +69,29 @@ export const ContactForm: React.FC = () => {
                 <h3 className="text-2xl font-extrabold text-white font-heading mt-1">
                   Iguana Control Authority
                 </h3>
-                <p className="text-xs text-amber-400 font-semibold mt-0.5">
-                  Avi Ezra, Owner & Wildlife Specialist
+                <p className="text-xs text-amber-400 font-bold mt-0.5">
+                  Licensed & Insured Wildlife Contractors
                 </p>
               </div>
 
               {/* Contact Methods */}
               <div className="space-y-4 text-sm text-slate-300">
                 
-                {/* Phone Call */}
+                {/* Phone Call - Big & Bold */}
                 <a
                   href="tel:13059224210"
                   onClick={() => trackPhoneCall('Contact Section Phone')}
-                  className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-emerald-500/40 hover:bg-slate-950 transition-all group"
+                  className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/90 border-2 border-emerald-500/50 hover:border-emerald-400 hover:bg-slate-950 transition-all group shadow-lg"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Phone className="w-5 h-5" />
+                  <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Phone className="w-6 h-6 animate-pulse" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block font-medium">Direct Phone & Emergency Hotline</span>
-                    <strong className="text-white text-base group-hover:text-emerald-400 transition-colors">
+                    <span className="text-xs text-slate-400 block font-semibold">Direct Phone & Emergency Dispatch</span>
+                    <strong className="text-white text-xl sm:text-2xl group-hover:text-emerald-400 transition-colors font-heading block">
                       (305) 922-4210
                     </strong>
-                    <span className="text-[11px] text-emerald-400 block mt-0.5 font-semibold">Tap to call Avi directly</span>
+                    <span className="text-xs text-emerald-400 block mt-0.5 font-bold">Tap to call directly • 7 Days a Week</span>
                   </div>
                 </a>
 
@@ -177,7 +177,7 @@ export const ContactForm: React.FC = () => {
                   Thank You, {formData.name || 'Friend'}!
                 </h3>
                 <p className="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
-                  Your property inspection request has been logged. Avi Ezra will review your details and contact you shortly at <strong className="text-white">{formData.phone}</strong> to confirm your appointment.
+                  Your property inspection request has been logged. Our wildlife specialists will review your details and contact you shortly at <strong className="text-white">{formData.phone}</strong> to confirm your appointment.
                 </p>
 
                 <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 max-w-md mx-auto text-xs text-left space-y-1.5 text-slate-300">
@@ -191,15 +191,15 @@ export const ContactForm: React.FC = () => {
                   <a
                     href="tel:13059224210"
                     onClick={() => trackPhoneCall('Post Submit Call')}
-                    className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
                   >
                     <Phone className="w-4 h-4" />
-                    <span>Call Avi Directly: (305) 922-4210</span>
+                    <span>Call Hotline Directly: (305) 922-4210</span>
                   </a>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs text-center"
+                    className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs text-center"
                   >
                     Submit Another Request
                   </button>
@@ -212,7 +212,7 @@ export const ContactForm: React.FC = () => {
                     Request A Free On-Site Inspection
                   </h3>
                   <p className="text-xs text-slate-400 mt-1">
-                    No credit card required. Avi will assess your infestation and provide a tailored plan.
+                    No credit card required. We will assess your infestation and provide a tailored plan.
                   </p>
                 </div>
 
@@ -226,7 +226,7 @@ export const ContactForm: React.FC = () => {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Avi Ezra"
+                      placeholder="e.g. John Doe"
                       className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
@@ -327,18 +327,18 @@ export const ContactForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-950/80 transition-all transform hover:-translate-y-0.5 disabled:opacity-50"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-950/80 transition-all transform hover:-translate-y-0.5 disabled:opacity-50"
                 >
                   <Send className="w-4 h-4" />
                   <span>{isSubmitting ? 'Submitting Details...' : 'Submit Request For Free On-Site Inspection'}</span>
                 </button>
 
                 <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1">
-                  <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="flex items-center gap-1 font-semibold text-emerald-400">
+                    <ShieldCheck className="w-3.5 h-3.5" />
                     100% Free & No Obligation
                   </span>
-                  <span>Direct Reply from Avi Ezra</span>
+                  <span>Direct Response from Wildlife Team</span>
                 </div>
               </form>
             )}

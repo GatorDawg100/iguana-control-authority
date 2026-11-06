@@ -25,8 +25,8 @@ export const WhyUs: React.FC = () => {
     },
     {
       icon: Users,
-      title: 'Owner-Operated Personal Service',
-      desc: 'Founded and led by Avi Ezra, you get personal accountability, clear communication, and direct follow-through from the owner on every single estimate and job.',
+      title: 'Certified Wildlife Specialists',
+      desc: 'You get dedicated wildlife professionals, clear communication, rapid response, and direct accountability on every single estimate and job.',
     },
     {
       icon: ShieldCheck,
@@ -77,23 +77,23 @@ export const WhyUs: React.FC = () => {
           })}
         </div>
 
-        {/* Founder Story Banner */}
+        {/* Professional Mission Banner */}
         <div className="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-emerald-950/60 border border-slate-800 p-8 sm:p-12 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8 space-y-4">
               <span className="text-amber-400 font-bold uppercase tracking-wider text-xs">
-                A Message From Our Founder
+                Our Professional Standards & Guarantee
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading uppercase">
                 "Our Mission Is Protecting Your South Florida Property with Integrity & Humane Care."
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                "South Florida is my home, and I’ve watched firsthand as invasive green iguanas have caused tens of thousands of dollars in seawall washouts, damaged costly pool decks, and ruined pristine tropical gardens. At Iguana Control Authority, we built our reputation on fast responsiveness, honest communication, and humane results that actually last. When you call us, you get our dedicated work truck at your driveway and solutions you can trust."
+                "South Florida is our home, and we’ve seen firsthand how invasive green iguanas cause tens of thousands of dollars in seawall washouts, damage costly pool decks, and ruin pristine tropical gardens. At Iguana Control Authority, we built our reputation on fast responsiveness, honest communication, and humane results that actually last. When you call us, you get our dedicated work truck at your driveway and solutions you can trust."
               </p>
               <div className="pt-2">
-                <span className="font-bold text-white text-base">Avi Ezra</span>
-                <span className="text-xs text-emerald-400 block">Founder & Lead Wildlife Specialist • Iguana Control Authority</span>
+                <span className="font-bold text-white text-base">Iguana Control Authority Team</span>
+                <span className="text-xs text-emerald-400 block">Certified Wildlife Specialists • South Florida Headquarters</span>
               </div>
             </div>
 
@@ -113,9 +113,9 @@ export const WhyUs: React.FC = () => {
               </p>
               <a
                 href="tel:13059224210"
-                className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all"
+                className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all"
               >
-                Call Avi: (305) 922-4210
+                Call Hotline: (305) 922-4210
               </a>
             </div>
 

@@ -3,8 +3,6 @@ import { Anchor, ShieldCheck, TreePine, Building2, Shovel, Sparkles, Phone, Arro
 import { trackServiceView, trackPhoneCall } from '../utils/analytics';
 
 export const Services: React.FC = () => {
-  const [selectedService, setSelectedService] = useState<number | null>(null);
-
   const services = [
     {
       id: 1,
@@ -13,7 +11,7 @@ export const Services: React.FC = () => {
       icon: Anchor,
       image: '/images/canal-seawall-capture.jpg',
       problem: 'Iguanas dig extensive burrow networks behind seawalls, washing out backfill soil into canals. Over time, this causes concrete seawall caps to crack, lawns to cave in, and repair bills to exceed $15,000–$40,000.',
-      solution: 'Avi Ezra conducts specialized waterfront sweeps, traps adult iguanas along dock pilings, excavates burrows, and installs anti-burrow riprap barriers.',
+      solution: 'Our wildlife specialists conduct specialized waterfront sweeps, trap adult iguanas along dock pilings, excavate burrows, and install anti-burrow riprap barriers.',
       benefits: [
         'Protects marine seawalls from sinkholes & backfill erosion',
         'Eliminates dangerous slipping hazards on docks & boat lifts',
@@ -117,7 +115,7 @@ export const Services: React.FC = () => {
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-emerald-400 font-bold text-sm shadow-md transition-all"
             >
               <Phone className="w-4 h-4" />
-              <span>Free Consultation: (305) 922-4210</span>
+              <span>Call For Free Estimate: (305) 922-4210</span>
             </a>
           </div>
         </div>
@@ -194,21 +192,21 @@ export const Services: React.FC = () => {
               Need a Custom Removal or Exclusion Plan?
             </h3>
             <p className="text-sm text-slate-300">
-              Avi Ezra provides free on-site inspections for homeowners, HOAs, and businesses across South Florida.
+              We provide free on-site inspections for homeowners, HOAs, and businesses across South Florida.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
             <a
               href="tel:13059224210"
               onClick={() => trackPhoneCall('Services Bottom CTA')}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Avi: (305) 922-4210</span>
+              <span>Call Hotline: (305) 922-4210</span>
             </a>
             <a
               href="#contact"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm text-center transition-all"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm text-center transition-all"
             >
               Request Free Inspection
             </a>

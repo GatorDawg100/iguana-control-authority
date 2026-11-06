@@ -10,7 +10,7 @@ export const Testimonials: React.FC = () => {
       rating: 5,
       date: '2 weeks ago',
       title: 'Saved our seawall from a complete washout!',
-      review: 'We had massive iguanas digging underneath our seawall cap and burrowing beneath our travertine pool deck. Avi Ezra showed up with the branded truck the same afternoon we called. He set humane traps, removed 8 large iguanas in 3 days, and collapsed the tunnels. Absolutely top-tier service!',
+      review: 'We had massive iguanas digging underneath our seawall cap and burrowing beneath our travertine pool deck. The Iguana Control Authority team showed up with the branded truck the same afternoon we called. They set humane traps, removed 8 large iguanas in 3 days, and collapsed the tunnels. Absolutely top-tier service!',
       service: 'Seawall Defense & Trapping',
     },
     {
@@ -20,7 +20,7 @@ export const Testimonials: React.FC = () => {
       rating: 5,
       date: '1 month ago',
       title: 'Our pool deck is finally clean again',
-      review: 'Iguanas were pooping all over our pool steps and patio furniture every single day—it was disgusting with grandkids visiting. Avi installed tree wraps on our palms so they couldn’t get up to the roof and trapped the colony. Courteous, professional, and humane.',
+      review: 'Iguanas were pooping all over our pool steps and patio furniture every single day—it was disgusting with grandkids visiting. The specialists installed tree wraps on our palms so they couldn’t get up to the roof and trapped the colony. Courteous, professional, and humane.',
       service: 'Pool Deck Defense & Tree Wrapping',
     },
     {
@@ -40,7 +40,7 @@ export const Testimonials: React.FC = () => {
       rating: 5,
       date: '2 months ago',
       title: 'Prompt, ethical, and extremely knowledgeable',
-      review: 'We loved our garden orchids and hibiscus, but iguanas stripped them to the stems. Avi explained the FWC guidelines, set live cages discreetly, and took care of the problem ethically. The free on-site estimate was clear and accurate.',
+      review: 'We loved our garden orchids and hibiscus, but iguanas stripped them to the stems. The technician explained the FWC guidelines, set live cages discreetly, and took care of the problem ethically. The free on-site estimate was clear and accurate.',
       service: 'Landscape & Garden Protection',
     },
   ];

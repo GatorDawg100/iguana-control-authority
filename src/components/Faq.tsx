@@ -8,7 +8,7 @@ export const Faq: React.FC = () => {
   const faqs = [
     {
       q: 'How much does professional iguana removal cost in South Florida?',
-      a: 'Pricing depends on property size, the location of the infestation (e.g. seawall, roof, or open landscaping), and whether you need single-time trapping or ongoing barrier installation. We offer 100% Free On-Site Property Inspections where Avi Ezra walks your property and provides a clear, fixed estimate with no hidden fees or obligations.',
+      a: 'Pricing depends on property size, the location of the infestation (e.g. seawall, roof, or open landscaping), and whether you need single-time trapping or ongoing barrier installation. We offer 100% Free On-Site Property Inspections where our specialist walks your property and provides a clear, fixed estimate with no hidden fees or obligations.',
     },
     {
       q: 'Why can’t iguanas just be caught and relocated to the Everglades?',
@@ -24,7 +24,7 @@ export const Faq: React.FC = () => {
     },
     {
       q: 'How fast can the Iguana Control Authority work truck arrive?',
-      a: 'Our dedicated, branded RAM service truck is on the road daily across Palm Beach, Broward, Miami-Dade, and Monroe Counties. We offer same-day emergency inspection for urgent patio intrusions, swimming pool contaminations, or attic/roof breaches. Call Avi Ezra at (305) 922-4210 for immediate dispatch.',
+      a: 'Our dedicated, branded RAM service truck is on the road daily across Palm Beach, Broward, Miami-Dade, and Monroe Counties. We offer same-day emergency inspection for urgent patio intrusions, swimming pool contaminations, or attic/roof breaches. Call (305) 922-4210 for immediate dispatch.',
     },
     {
       q: 'How does tree wrapping work to stop them getting on the roof?',
@@ -36,7 +36,7 @@ export const Faq: React.FC = () => {
     },
     {
       q: 'What should I do if an iguana is inside my pool or home right now?',
-      a: 'Do not attempt to corner or grab an adult iguana—they possess razor-sharp serrated teeth, powerful claws, and can whip their heavy tails with enough force to cut skin. Call Avi Ezra immediately at (305) 922-4210 or text photos for immediate guidance.',
+      a: 'Do not attempt to corner or grab an adult iguana—they possess razor-sharp serrated teeth, powerful claws, and can whip their heavy tails with enough force to cut skin. Call our team immediately at (305) 922-4210 or text photos for immediate guidance.',
     },
   ];
 
@@ -101,20 +101,20 @@ export const Faq: React.FC = () => {
             Have a Specific Question About Your Property?
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
-            Speak directly with Avi Ezra, founder of Iguana Control Authority. We are happy to answer your questions and evaluate photos of your iguana damage.
+            Speak directly with our certified wildlife specialists. We are happy to answer your questions and evaluate photos of your iguana damage.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
               href="tel:13059224210"
               onClick={() => trackPhoneCall('FAQ Direct Call')}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Avi: (305) 922-4210</span>
+              <span>Call Hotline: (305) 922-4210</span>
             </a>
             <a
               href="mailto:service@iguanacontrolauthority.com"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 transition-all"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 transition-all"
             >
               <Mail className="w-4 h-4 text-emerald-400" />
               <span>Email Service Desk</span>

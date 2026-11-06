@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, Check, ArrowRight, ShieldAlert, Sparkles, Phone, HelpCircle } from 'lucide-react';
+import { Calculator, Check, ArrowRight, Sparkles, Phone, HelpCircle } from 'lucide-react';
 import { trackAssessmentCompleted, trackPhoneCall } from '../utils/analytics';
 
 export const AssessmentCalculator: React.FC = () => {
@@ -212,8 +212,8 @@ export const AssessmentCalculator: React.FC = () => {
               <div className="flex items-start gap-2">
                 <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-slate-200">Free On-Site Estimate:</strong>
-                  <div className="text-emerald-300 font-semibold">$0 Inspection by Avi Ezra</div>
+                  <strong className="text-slate-200">On-Site Estimate:</strong>
+                  <div className="text-emerald-300 font-semibold">100% Free On-Site Inspection</div>
                 </div>
               </div>
             </div>
@@ -222,19 +222,19 @@ export const AssessmentCalculator: React.FC = () => {
             <div className="space-y-2.5">
               <a
                 href="#contact"
-                className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-950 transition-colors"
+                className="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-950 transition-colors"
               >
-                <span>Book This Free On-Site Inspection</span>
+                <span>Book Free On-Site Inspection</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
                 href="tel:13059224210"
                 onClick={() => trackPhoneCall('Calculator Direct Call')}
-                className="w-full py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold text-xs text-center flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-3 px-4 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold text-xs text-center flex items-center justify-center gap-2 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-amber-400" />
-                <span>Call Avi Ezra Directly: (305) 922-4210</span>
+                <span>Call Hotline Directly: (305) 922-4210</span>
               </a>
             </div>
 

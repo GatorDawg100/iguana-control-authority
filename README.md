@@ -1,6 +1,6 @@
 # Iguana Control Authority — Official Modern Website
 
-A high-converting, responsive, SEO-optimized website built for **Iguana Control Authority** (founded by **Avi Ezra**) serving **Palm Beach, Broward, Miami-Dade, and Monroe Counties** in South Florida.
+A high-converting, responsive, SEO-optimized website built for **Iguana Control Authority** serving **Palm Beach, Broward, Miami-Dade, and Monroe Counties** in South Florida.
 
 ---
 
@@ -16,7 +16,7 @@ A high-converting, responsive, SEO-optimized website built for **Iguana Control 
 - Instantly generates a customized treatment & defense protocol with scope of work and one-click booking.
 
 ### 3. Real Field Work Gallery
-- Showcases authentic, real-world photos from Avi Ezra's jobs:
+- Showcases authentic, real-world photos from field operations:
   - Branded RAM service truck with logo and direct phone number
   - Waterfront canal & seawall captures along luxury yacht docks
   - Humane live cage traps positioned in garden corridors
@@ -83,7 +83,6 @@ The `/dist` directory contains a static production bundle that can be deployed t
 
 ## 📞 Business Information
 - **Business Name**: Iguana Control Authority
-- **Owner / Founder**: Avi Ezra
 - **Phone**: (305) 922-4210
 - **Email**: service@iguanacontrolauthority.com
 - **Headquarters**: 950 Peninsula Corporate Cir, Boca Raton, FL 33487

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, ShieldCheck, CheckCircle2, Star, ArrowRight, MessageSquare, AlertCircle, Eye, ChevronRight } from 'lucide-react';
+import { Phone, ShieldCheck, CheckCircle2, Star, ArrowRight, MessageSquare, AlertCircle, Mail, Clock, MapPin, Sparkles } from 'lucide-react';
 import { trackPhoneCall, trackFormSubmission, trackSms } from '../utils/analytics';
 import confetti from 'canvas-confetti';
 
@@ -19,8 +19,8 @@ export const Hero: React.FC = () => {
       badge: 'Active Dock Infestation',
     },
     {
-      title: 'Canal & Seawall Humane Capture',
-      subtitle: 'Technician securing mature iguana along waterfront seawall and boat slip',
+      title: 'Canal & Seawall Live Capture',
+      subtitle: 'Specialist securing mature iguana along waterfront seawall and boat slip',
       image: '/images/canal-seawall-capture.jpg',
       badge: 'Waterfront Removal',
     },
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
       badge: 'Garden Defense',
     },
     {
-      title: 'Field Fleet Decal & Direct Dispatch',
+      title: 'Field Fleet Decal & Dispatch',
       subtitle: 'Service truck door decal with official license crest and emergency hotline',
       image: '/images/service-truck.jpg',
       badge: 'Branded Fleet Decal',
@@ -55,99 +55,129 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-12 lg:py-20 border-b border-slate-800">
+    <section className="relative overflow-hidden bg-slate-950 py-10 lg:py-16 border-b border-slate-800 min-h-[640px] flex items-center">
       
-      {/* Real South Florida Waterfront Background Image with Atmospheric Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Real Florida Environment Background Image with Iguanas on Dock */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="/images/hero-waterfront-bg.jpg"
-          alt="South Florida Waterfront Canal Background"
-          className="w-full h-full object-cover object-center opacity-30 filter blur-[1px] scale-105 transform"
+          src="/images/florida-dock-iguanas.jpg"
+          alt="Florida canal dock environment with iguanas basking"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-105"
         />
-        {/* Multi-layered gradient overlay ensuring high contrast readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80" />
+        {/* Soft, balanced gradient overlays that let the real Florida environment show while ensuring text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/70" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column: Value Proposition & CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          {/* Left Column: Value Proposition & BIG POPPING Action Box */}
+          <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
             
-            {/* Trust Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 text-xs font-semibold shadow-lg backdrop-blur-sm">
+            {/* Top Credibility Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/50 text-emerald-300 text-xs font-bold shadow-lg backdrop-blur-md">
               <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-              <span>FWC Compliant • Licensed & Insured • Rapid Dispatch</span>
+              <span>FWC Compliant • Licensed & Insured • Free Estimates</span>
             </div>
 
-            {/* Main Headline (Clean typography, no isolated hanging words) */}
+            {/* Main Headline (Clean semantic blocks, NO dangling single words) */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight font-heading leading-tight uppercase">
-              South Florida's Authority In
+              <span className="block">South Florida's Authority</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-amber-300 mt-1">
                 Humane Iguana Removal
               </span>
               <span className="block text-white mt-1">
-                & Property Defense
+                & Seawall Protection
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-              Don’t let invasive green iguanas destroy your seawalls, dig under your pool patios, foul your docks, or strip your exotic landscaping. <strong className="text-white font-semibold">Avi Ezra</strong> and the <strong className="text-white font-semibold">Iguana Control Authority</strong> team dispatch directly to your property in our dedicated work truck to deliver legal, ethical, and permanent defense.
+            <p className="text-sm sm:text-base text-slate-200 max-w-2xl leading-relaxed font-medium">
+              Don’t let invasive green iguanas destroy your seawalls, undermine pool patios, foul yacht docks, or eat prized landscaping. The <strong className="text-white font-bold">Iguana Control Authority</strong> team dispatches directly to your property in our equipped work truck with ethical, legal, and permanent eradication solutions.
             </p>
 
-            {/* Bullet Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-200 pt-1">
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span><strong className="text-white">Free On-Site Property</strong> Estimates</span>
+            {/* ============================================================== */}
+            {/* BIG HIGH-VISIBILITY CALL & APPOINTMENT ACTION BOX (POPS TO EYE) */}
+            {/* ============================================================== */}
+            <div className="p-4 sm:p-5 rounded-3xl bg-slate-900/95 border-2 border-emerald-500/60 shadow-2xl backdrop-blur-md space-y-3.5 max-w-2xl">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2.5">
+                <span className="text-xs font-black uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-amber-400" />
+                  Call Now To Book Your Free On-Site Inspection
+                </span>
+                <span className="text-[11px] font-bold text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+                  Same-Day Dispatch Available
+                </span>
               </div>
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span><strong className="text-white">Seawall & Dock</strong> Burrow Eradication</span>
-              </div>
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span><strong className="text-white">Mobile Work Truck</strong> Drives to You</span>
-              </div>
-              <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span><strong className="text-white">Palm Beach, Broward, Dade, Keys</strong></span>
-              </div>
-            </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+              {/* GIANT POPPING PHONE BUTTON */}
               <a
                 href="tel:13059224210"
-                onClick={() => trackPhoneCall('Hero Main CTA')}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-950/80 hover:shadow-emerald-600/40 transition-all transform hover:-translate-y-0.5"
+                onClick={() => trackPhoneCall('Hero Giant Phone CTA')}
+                className="w-full py-4 sm:py-5 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 text-white font-black text-lg sm:text-2xl flex items-center justify-center gap-3.5 shadow-2xl shadow-emerald-950/90 hover:shadow-emerald-500/50 transition-all border-2 border-emerald-300/50 transform hover:-translate-y-0.5"
               >
-                <Phone className="w-4 h-4 text-emerald-100" />
-                <span>Call Avi: (305) 922-4210</span>
+                <div className="w-12 h-12 rounded-xl bg-slate-950/30 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 sm:w-7 sm:h-7 animate-bounce text-emerald-100" />
+                </div>
+                <div className="flex flex-col text-left leading-none">
+                  <span className="text-[11px] sm:text-xs uppercase tracking-widest text-emerald-100 font-extrabold mb-1">
+                    TAP TO CALL DIRECT DISPATCH HOTLINE
+                  </span>
+                  <span className="tracking-wider font-heading text-2xl sm:text-3xl text-white font-black">
+                    (305) 922-4210
+                  </span>
+                </div>
               </a>
 
-              <a
-                href="sms:13059224210"
-                onClick={() => trackSms('Hero Main SMS')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-100 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-md"
-              >
-                <MessageSquare className="w-4 h-4 text-amber-400" />
-                <span>Text Photos for Quick Quote</span>
-              </a>
+              {/* Secondary Actions: SMS + Email + Free Appointment */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <a
+                  href="#contact"
+                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-amber-950/40 transition-all"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-slate-950" />
+                  <span>Book Free Estimate Online</span>
+                </a>
+
+                <a
+                  href="sms:13059224210"
+                  onClick={() => trackSms('Hero Action Box SMS')}
+                  className="w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all"
+                >
+                  <MessageSquare className="w-4 h-4 text-amber-400" />
+                  <span>Text Photos: (305) 922-4210</span>
+                </a>
+              </div>
+
+              {/* Direct Email & Operating Info */}
+              <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-300 pt-2 border-t border-slate-800/80">
+                <a
+                  href="mailto:service@iguanacontrolauthority.com"
+                  className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors font-semibold truncate"
+                >
+                  <Mail className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                  <span>service@iguanacontrolauthority.com</span>
+                </a>
+                <span className="flex items-center gap-1.5 text-slate-400">
+                  <Clock className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                  <span>Open Mon–Sun 8AM–6:30PM</span>
+                </span>
+              </div>
             </div>
 
-            {/* Ratings & Social Proof */}
-            <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400 border-t border-slate-800/80">
+            {/* Quick Proof Badges */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-400 pt-1">
               <div className="flex items-center gap-1 text-amber-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="font-semibold text-slate-200">4.9 / 5.0 Rating</span>
+              <span className="font-bold text-slate-200">4.9 / 5.0 Rating</span>
               <span className="text-slate-600 hidden sm:inline">•</span>
               <span>120+ South Florida Properties Protected</span>
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <span className="text-emerald-400 font-semibold">Palm Beach, Broward, Dade & Monroe</span>
             </div>
           </div>
 
@@ -158,7 +188,7 @@ export const Hero: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden border border-emerald-800/40 bg-slate-900/90 shadow-2xl group">
               
               {/* Photo Display */}
-              <div className="relative h-60 sm:h-64 overflow-hidden bg-slate-950">
+              <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
                 <img
                   src={heroPhotos[activePhotoIdx].image}
                   alt={heroPhotos[activePhotoIdx].title}
@@ -206,13 +236,13 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Fast On-Site Estimate Request Box */}
-              <div className="p-5 bg-slate-900 border-t border-slate-800">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-heading text-base font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+              <div className="p-4 sm:p-5 bg-slate-900 border-t border-slate-800">
+                <div className="flex items-center justify-between mb-2.5">
+                  <h3 className="font-heading text-sm sm:text-base font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" /> Request Free On-Site Inspection
                   </h3>
                   <span className="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 font-bold uppercase">
-                    Same-Day
+                    Free $0
                   </span>
                 </div>
 
@@ -221,20 +251,20 @@ export const Hero: React.FC = () => {
                     <CheckCircle2 className="w-7 h-7 text-emerald-400 mx-auto" />
                     <h4 className="font-bold text-white text-sm">Inspection Request Received!</h4>
                     <p className="text-xs text-slate-300">
-                      Avi Ezra will call or text you shortly at <strong className="text-emerald-300">{quickPhone}</strong>.
+                      Our wildlife specialist will contact you shortly at <strong className="text-emerald-300">{quickPhone}</strong>.
                     </p>
                     <a
                       href="tel:13059224210"
-                      className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:underline font-semibold mt-1"
+                      className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:underline font-bold mt-1"
                     >
-                      Need immediate help? Call (305) 922-4210 →
+                      Need immediate assistance? Call (305) 922-4210 →
                     </a>
                   </div>
                 ) : (
                   <form onSubmit={handleQuickSubmit} className="space-y-2.5">
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-[10px] font-medium text-slate-300 mb-1">Your Name *</label>
+                        <label className="block text-[10px] font-semibold text-slate-300 mb-1">Your Name *</label>
                         <input
                           type="text"
                           required
@@ -245,7 +275,7 @@ export const Hero: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-medium text-slate-300 mb-1">Phone Number *</label>
+                        <label className="block text-[10px] font-semibold text-slate-300 mb-1">Phone Number *</label>
                         <input
                           type="tel"
                           required
@@ -259,7 +289,7 @@ export const Hero: React.FC = () => {
 
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-[10px] font-medium text-slate-300 mb-1">City / County</label>
+                        <label className="block text-[10px] font-semibold text-slate-300 mb-1">City / County</label>
                         <input
                           type="text"
                           value={quickCity}
@@ -269,7 +299,7 @@ export const Hero: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-[10px] font-medium text-slate-300 mb-1">Primary Concern</label>
+                        <label className="block text-[10px] font-semibold text-slate-300 mb-1">Primary Problem</label>
                         <select
                           value={quickIssue}
                           onChange={(e) => setQuickIssue(e.target.value)}
@@ -286,15 +316,15 @@ export const Hero: React.FC = () => {
 
                     <button
                       type="submit"
-                      className="w-full py-2.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-amber-950/40 transition-colors"
+                      className="w-full py-3 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md shadow-amber-950/40 transition-colors"
                     >
-                      <span>Get Free Property Estimate</span>
+                      <span>Submit For Free Inspection</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
 
                     <p className="text-[10px] text-slate-400 text-center flex items-center justify-center gap-1">
                       <AlertCircle className="w-3 h-3 text-emerald-400" />
-                      100% Free • No obligation • Direct dispatch from Avi
+                      100% Free • No obligation • Rapid Mobile Dispatch
                     </p>
                   </form>
                 )}

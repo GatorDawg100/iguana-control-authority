@@ -115,7 +115,7 @@ export const Gallery: React.FC = () => {
             Real Results From South Florida Jobs
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-2">
-            No stock photos or generic promises. See authentic photos of Avi Ezra’s waterfront captures, dock infestations, humane cage traps, and field operations.
+            No stock photos or generic promises. See authentic photos of our waterfront captures, dock infestations, humane cage traps, and field operations.
           </p>
         </div>
 
@@ -234,7 +234,7 @@ export const Gallery: React.FC = () => {
                     href="tel:13059224210"
                     className="w-full sm:w-auto px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider text-center"
                   >
-                    Call Avi: (305) 922-4210
+                    Call: (305) 922-4210
                   </a>
                 </div>
               </div>

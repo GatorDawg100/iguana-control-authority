@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
                   Iguana Control <span className="text-emerald-400">Authority</span>
                 </span>
                 <span className="text-amber-400 font-semibold text-xs block">
-                  Avi Ezra, Founder & Lead Specialist
+                  Licensed & Insured Wildlife Specialists
                 </span>
               </div>
             </div>
@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
               <li><a href="#assessment" className="hover:text-emerald-400 transition-colors">Cost Estimator</a></li>
               <li><a href="#areas" className="hover:text-emerald-400 transition-colors">Service Areas</a></li>
               <li><a href="#gallery" className="hover:text-emerald-400 transition-colors">Field Work Gallery</a></li>
-              <li><a href="#why-us" className="hover:text-emerald-400 transition-colors">Why Choose Avi Ezra</a></li>
+              <li><a href="#why-us" className="hover:text-emerald-400 transition-colors">Why Choose Us</a></li>
               <li><a href="#faq" className="hover:text-emerald-400 transition-colors">Frequently Asked Questions</a></li>
               <li><a href="#contact" className="hover:text-emerald-400 transition-colors">Free Estimate Form</a></li>
             </ul>

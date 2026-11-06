@@ -99,7 +99,7 @@ export const ServiceAreas: React.FC = () => {
             Areas We Serve In South Florida
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-2">
-            Our branded work truck drives directly to your location. Based out of <strong className="text-white">Boca Raton</strong>, Avi Ezra covers Palm Beach, Broward, Miami-Dade, and Monroe Counties.
+            Our branded work truck drives directly to your location. Based out of <strong className="text-white">Boca Raton</strong>, our service fleet covers Palm Beach, Broward, Miami-Dade, and Monroe Counties.
           </p>
         </div>
 
@@ -175,7 +175,7 @@ export const ServiceAreas: React.FC = () => {
                   className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call For {current.name} Service</span>
+                  <span>Call For {current.name} Service: (305) 922-4210</span>
                 </a>
                 <a
                   href="#contact"
@@ -220,8 +220,8 @@ export const ServiceAreas: React.FC = () => {
                   <span className="font-medium text-white text-right">950 Peninsula Corp, Boca Raton 33487</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-800/80 py-1">
-                  <span className="text-slate-400">Owner & Lead Specialist:</span>
-                  <span className="font-medium text-emerald-400">Avi Ezra</span>
+                  <span className="text-slate-400">Service Coverage:</span>
+                  <span className="font-medium text-emerald-400">Tri-County & Florida Keys</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-800/80 py-1">
                   <span className="text-slate-400">Free Estimates:</span>
