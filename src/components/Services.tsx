@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, ShieldCheck, TreePine, Building2, Shovel, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Anchor, ShieldCheck, TreePine, Building2, Shovel, Home, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
 import { trackServiceView, trackPhoneCall } from '../utils/analytics';
 
 export const Services: React.FC = () => {
@@ -72,6 +72,20 @@ export const Services: React.FC = () => {
         'Breaks the rapid breeding cycle on your property',
         'Prevents sidewalk and pool foundation cracking',
         'Permanent soil stabilization around foundations',
+      ],
+    },
+    {
+      id: 6,
+      title: 'Long-Term Property Control Solutions',
+      tagline: 'Humane, legal removal for homes & businesses across South Florida',
+      icon: Home,
+      image: '/images/trap-garden.jpg',
+      problem: 'Invasive green iguanas multiply rapidly across residential yards, waterfront estates, and commercial grounds, damaging costly vegetation and invading private living spaces.',
+      solution: 'We provide humane, legal iguana removal and long-term control solutions for homes and businesses across Broward County and surrounding South Florida communities.',
+      benefits: [
+        'Customized control programs for private homes and estates',
+        'Humane, ethical removal adhering to Florida FWC protocols',
+        'Direct mobile dispatch across Broward, Palm Beach, Dade & Monroe',
       ],
     },
   ];
