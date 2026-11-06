@@ -142,7 +142,7 @@ export const ContactForm: React.FC = () => {
                 <Clock className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Hours of Operation</span>
-                  <span>Mon – Sun: 8:00 AM – 6:30 PM<br /><strong className="text-emerald-700">Open 7 Days A Week</strong></span>
+                  <span>Mon – Sun: 9:00 AM – 6:00 PM<br /><strong className="text-emerald-700">Open 7 Days A Week</strong></span>
                 </div>
               </div>
 

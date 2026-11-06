@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4 text-[11px] text-emerald-100">
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-amber-300" />
-              Mon–Sun: 8:00 AM – 6:30 PM (7 Days)
+              Mon–Sun: 9:00 AM – 6:00 PM (7 Days)
             </span>
 
             {/* Social Media Links */}
