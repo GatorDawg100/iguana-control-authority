@@ -6,50 +6,53 @@ export const TrustBar: React.FC = () => {
     {
       icon: ShieldCheck,
       title: 'Licensed & Insured',
-      desc: 'Full liability coverage for residential & commercial properties',
+      desc: 'Full liability coverage for South Florida properties',
     },
     {
       icon: Award,
       title: 'FWC Compliant',
-      desc: '100% legal & ethical removal adhering to state wildlife protocols',
+      desc: '100% legal & ethical removal adhering to state rules',
     },
     {
       icon: Truck,
       title: 'Equipped Work Truck',
-      desc: 'Dispatched directly to your site with traps & exclusion equipment',
+      desc: 'Direct dispatch to your dock, pool, or estate',
     },
     {
       icon: Clock,
       title: 'Rapid Response',
-      desc: 'Same-day emergency inspection available across 4 counties',
+      desc: 'Open Mon–Sun 9AM–6PM with same-day dispatch',
     },
     {
       icon: FileCheck,
       title: 'Free On-Site Estimates',
-      desc: 'Transparent pricing with zero hidden fees or obligations',
+      desc: 'Transparent pricing with zero hidden fees',
     },
     {
       icon: ThumbsUp,
-      title: '100% Satisfaction',
-      desc: 'Tailored property protection plans backed by local reputation',
+      title: 'Guaranteed Defense',
+      desc: 'Proven trapping & long-term property exclusion',
     },
   ];
 
   return (
-    <section className="bg-slate-900 border-y border-emerald-900/40 py-8">
+    <section className="bg-white border-b border-slate-200 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
           {trustItems.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div key={idx} className="flex flex-col items-center text-center p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-emerald-500/30 transition-all group">
-                <div className="w-10 h-10 rounded-lg bg-emerald-950/70 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2.5 group-hover:scale-110 group-hover:bg-emerald-900/50 transition-transform">
+              <div
+                key={idx}
+                className="flex flex-col items-center text-center p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500/40 hover:bg-emerald-50/30 transition-all group"
+              >
+                <div className="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-2.5 group-hover:scale-110 group-hover:bg-emerald-200 transition-all">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h4 className="text-xs sm:text-sm font-bold text-white mb-1 font-heading uppercase tracking-wide">
+                <h4 className="text-xs sm:text-sm font-bold text-slate-900 mb-1 font-heading uppercase tracking-wide">
                   {item.title}
                 </h4>
-                <p className="text-[11px] text-slate-400 leading-tight">
+                <p className="text-[11px] text-slate-600 leading-tight">
                   {item.desc}
                 </p>
               </div>

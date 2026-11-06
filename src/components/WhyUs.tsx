@@ -1,74 +1,75 @@
 import React from 'react';
-import { ShieldCheck, HeartHandshake, Truck, Target, Award, Users } from 'lucide-react';
+import { ShieldCheck, HeartHandshake, Truck, Target, Award, Users, Phone, ArrowRight } from 'lucide-react';
+import { trackPhoneCall } from '../utils/analytics';
 
 export const WhyUs: React.FC = () => {
   const points = [
     {
       icon: Target,
       title: 'Iguana Control Is All We Do',
-      desc: 'Unlike general exterminators who treat iguanas as an afterthought alongside roaches or ants, Iguana Control Authority specializes 100% in invasive green iguana behavior, habitats, and exclusion.',
+      desc: 'Unlike general pest exterminators who treat iguanas as a minor side task, Iguana Control Authority specializes 100% in invasive green iguana behavior, biology, and permanent exclusion.',
     },
     {
       icon: HeartHandshake,
       title: 'Ethical & Humane Standards',
-      desc: 'We strictly adhere to Florida Fish and Wildlife Conservation Commission (FWC) humane handling and anti-cruelty guidelines. We eliminate threats legally, safely, and humanely.',
+      desc: 'We strictly adhere to Florida Fish and Wildlife Conservation Commission (FWC) humane handling and anti-cruelty guidelines. Every removal is legal, safe, and ethical.',
     },
     {
       icon: Truck,
       title: 'Dispatched Dedicated Service Truck',
-      desc: 'We arrive in a professional, branded RAM service truck equipped with commercial-grade traps, telescoping catch poles, tree wrapping aluminum, and burrow remediation equipment.',
+      desc: 'We arrive in an official branded service truck equipped with commercial live cages, telescoping catch poles, tree wrapping aluminum, and burrow remediation equipment.',
     },
     {
       icon: Award,
       title: 'Licensed & Fully Insured',
-      desc: 'We hold complete commercial and residential liability insurance. You are protected whether we are working along your waterfront seawall, on high roof tiles, or around your pool cage.',
+      desc: 'We maintain comprehensive commercial and residential liability insurance. You are protected whether we are working along seawalls, on high roof tiles, or around pool lanais.',
     },
     {
       icon: Users,
       title: 'Certified Wildlife Specialists',
-      desc: 'You get dedicated wildlife professionals, clear communication, rapid response, and direct accountability on every single estimate and job.',
+      desc: 'Direct communication, rapid response, and professional accountability on every single property visit. No inexperienced subcontractors.',
     },
     {
       icon: ShieldCheck,
       title: 'Free On-Site Inspections & Clear Pricing',
-      desc: 'No vague phone quotes or surprise add-ons. We walk your property, inspect the burrow networks and basking hotspots, and provide a clear, customized proposal with zero obligation.',
+      desc: 'No vague phone guesses or hidden fees. We walk your property, inspect the burrow networks and basking corridors, and provide a clear proposal with zero obligation.',
     },
   ];
 
   return (
-    <section id="why-us" className="py-20 bg-slate-900 border-b border-slate-800 relative">
+    <section id="why-us" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-emerald-400 font-bold uppercase tracking-widest text-xs">
-            The South Florida Difference
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-emerald-700 font-extrabold uppercase tracking-widest text-xs">
+            The South Florida Standard
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading uppercase tracking-wide mt-2">
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 font-heading uppercase tracking-wide mt-2">
             Why Property Owners Choose Iguana Control Authority
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-            Invasive green iguanas are fast, smart, and agile climbers and swimmers. Eradicating them requires specialized wildlife mastery, not standard pest control sprays.
+          <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+            Invasive green iguanas are agile climbers and strong swimmers. Removing them permanently requires dedicated wildlife mastery, not standard insect sprays.
           </p>
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {points.map((pt, idx) => {
             const Icon = pt.icon;
             return (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-emerald-500/40 shadow-xl transition-all flex flex-col justify-between group hover:-translate-y-1"
+                className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group hover:-translate-y-1"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-emerald-200 transition-transform">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white font-heading mb-3 group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-heading mb-2.5 group-hover:text-emerald-700 transition-colors">
                     {pt.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {pt.desc}
                   </p>
                 </div>
@@ -77,48 +78,32 @@ export const WhyUs: React.FC = () => {
           })}
         </div>
 
-        {/* Professional Mission Banner */}
-        <div className="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-emerald-950/60 border border-slate-800 p-8 sm:p-12 shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-8 space-y-4">
-              <span className="text-amber-400 font-bold uppercase tracking-wider text-xs">
-                Our Professional Standards & Guarantee
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading uppercase">
-                "Our Mission Is Protecting Your South Florida Property with Integrity & Humane Care."
-              </h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                "South Florida is our home, and we’ve seen firsthand how invasive green iguanas cause tens of thousands of dollars in seawall washouts, damage costly pool decks, and ruin pristine tropical gardens. At Iguana Control Authority, we built our reputation on fast responsiveness, honest communication, and humane results that actually last. When you call us, you get our dedicated work truck at your driveway and solutions you can trust."
-              </p>
-              <div className="pt-2">
-                <span className="font-bold text-white text-base">Iguana Control Authority Team</span>
-                <span className="text-xs text-emerald-400 block">Certified Wildlife Specialists • South Florida Headquarters</span>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-slate-950/80 border border-emerald-700/30 shadow-xl">
-              <div className="w-20 h-24 mb-3">
-                <img
-                  src="/images/logo-crest.jpg"
-                  alt="Iguana Control Authority Crest"
-                  className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(16,185,129,0.3)]"
-                />
-              </div>
-              <h4 className="text-white font-heading text-lg uppercase font-bold">
-                Iguana Control Authority
-              </h4>
-              <p className="text-xs text-slate-400 mt-1 mb-4">
-                950 Peninsula Corporate Cir, Boca Raton, FL 33487
-              </p>
-              <a
-                href="tel:13059224210"
-                className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all"
-              >
-                Call Hotline: (305) 922-4210
-              </a>
-            </div>
-
+        {/* Callout Strip */}
+        <div className="rounded-3xl bg-emerald-700 text-white p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <h3 className="text-2xl sm:text-3xl font-black font-heading tracking-tight">
+              Ready To Clear Your Property of Invasive Iguanas?
+            </h3>
+            <p className="text-emerald-100 text-sm sm:text-base max-w-xl">
+              Call our direct dispatch line now for a free on-site property evaluation. We drive to your location with our fully equipped service truck.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <a
+              href="tel:13059224210"
+              onClick={() => trackPhoneCall('WhyUs Banner CTA')}
+              className="py-3.5 px-6 rounded-xl bg-white text-emerald-800 hover:bg-emerald-50 font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+            >
+              <Phone className="w-4 h-4 text-emerald-700" />
+              <span>Call (305) 922-4210</span>
+            </a>
+            <a
+              href="#contact"
+              className="py-3.5 px-6 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 border border-emerald-600 transition-all"
+            >
+              <span>Schedule Inspection</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Shield, Phone, Mail, MapPin, Clock, ArrowUp, CheckCircle2 } from 'lucide-react';
-import { trackPhoneCall } from '../utils/analytics';
+import { Shield, Phone, Mail, MapPin, Clock, Award, ArrowUp, Instagram, Facebook } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -8,136 +7,157 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           
-          {/* Brand Info (5 cols) */}
-          <div className="lg:col-span-5 space-y-4">
+          {/* Col 1: Brand & Socials */}
+          <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-14 flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-white p-1 border border-slate-700 shadow-md flex items-center justify-center flex-shrink-0">
                 <img
                   src="/images/logo-crest.jpg"
-                  alt="Iguana Control Authority Logo"
-                  className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(16,185,129,0.3)]"
+                  alt="Iguana Control Authority Logo Crest"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <span className="text-xl font-bold text-white font-heading uppercase block tracking-wider">
-                  Iguana Control <span className="text-emerald-400">Authority</span>
+                <span className="text-lg font-black text-white font-heading tracking-tight block">
+                  IGUANA CONTROL AUTHORITY
                 </span>
-                <span className="text-amber-400 font-semibold text-xs block">
-                  Licensed & Insured Wildlife Specialists
+                <span className="text-xs text-emerald-400 font-bold uppercase tracking-wider block">
+                  Humane Wildlife Experts
                 </span>
               </div>
             </div>
 
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pr-6">
-              South Florida’s dedicated wildlife defense team specializing exclusively in ethical, FWC-compliant invasive green iguana eradication, seawall burrow protection, and property barrier proofing. Dispatched directly to your site in our branded work truck.
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+              South Florida’s licensed authority for ethical invasive iguana removal, dock sweeps, and seawall erosion defense. Dispatched directly to properties across Palm Beach, Broward, Miami-Dade, and Monroe Counties.
             </p>
 
-            <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] text-slate-300">
-              <span className="inline-flex items-center gap-1 bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-md">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Licensed & Insured
+            {/* Official Social Media Links */}
+            <div className="pt-2">
+              <span className="text-xs text-slate-400 font-bold uppercase tracking-wider block mb-2">
+                Connect on Social Media
               </span>
-              <span className="inline-flex items-center gap-1 bg-slate-900 text-slate-200 border border-slate-800 px-2.5 py-1 rounded-md">
-                <Shield className="w-3.5 h-3.5 text-amber-400" /> FWC Wildlife Compliant
-              </span>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/iguanacontrolauthority"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-emerald-600 text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-sm border border-slate-700"
+                  aria-label="Follow Iguana Control Authority on Instagram"
+                >
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/profile.php?id=61584350266019#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-sm border border-slate-700"
+                  aria-label="Follow Iguana Control Authority on Facebook"
+                >
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Quick Links (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-heading text-sm font-bold text-white uppercase tracking-wider">
-              Quick Links
+          {/* Col 2: Services Quick Links */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">
+              Specialized Services
             </h4>
-            <ul className="space-y-2">
-              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Our Services</a></li>
-              <li><a href="#assessment" className="hover:text-emerald-400 transition-colors">Cost Estimator</a></li>
-              <li><a href="#areas" className="hover:text-emerald-400 transition-colors">Service Areas</a></li>
-              <li><a href="#gallery" className="hover:text-emerald-400 transition-colors">Field Work Gallery</a></li>
-              <li><a href="#why-us" className="hover:text-emerald-400 transition-colors">Why Choose Us</a></li>
-              <li><a href="#faq" className="hover:text-emerald-400 transition-colors">Frequently Asked Questions</a></li>
-              <li><a href="#contact" className="hover:text-emerald-400 transition-colors">Free Estimate Form</a></li>
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Waterfront Seawall Defense</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Humane Live Trapping</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Tree Wrapping & Barriers</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Commercial & HOA Programs</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Burrow Nest Excavation</a></li>
+              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Pool Deck Sanitization</a></li>
             </ul>
           </div>
 
-          {/* Service Areas (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-heading text-sm font-bold text-white uppercase tracking-wider">
-              Counties Served
+          {/* Col 3: Service Areas */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">
+              Service Areas
             </h4>
-            <ul className="space-y-2 text-slate-300">
-              <li><strong className="text-white">Palm Beach County</strong> (Boca Raton HQ, Delray, Palm Beach)</li>
-              <li><strong className="text-white">Broward County</strong> (Fort Lauderdale, Pompano, Coral Springs)</li>
-              <li><strong className="text-white">Miami-Dade County</strong> (Miami, Coral Gables, Aventura)</li>
-              <li><strong className="text-white">Monroe County</strong> (Key Largo, Islamorada, Keys)</li>
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li><a href="#service-areas" className="hover:text-emerald-400 transition-colors">Boca Raton (HQ) & Delray</a></li>
+              <li><a href="#service-areas" className="hover:text-emerald-400 transition-colors">Palm Beach & Wellington</a></li>
+              <li><a href="#service-areas" className="hover:text-emerald-400 transition-colors">Fort Lauderdale & Broward</a></li>
+              <li><a href="#service-areas" className="hover:text-emerald-400 transition-colors">Miami & Coral Gables</a></li>
+              <li><a href="#service-areas" className="hover:text-emerald-400 transition-colors">Monroe County (Keys)</a></li>
+              <li><a href="#service-areas" className="hover:text-emerald-400 transition-colors">Direct Truck Dispatch</a></li>
             </ul>
           </div>
 
-          {/* Direct Contact (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-heading text-sm font-bold text-white uppercase tracking-wider">
-              Corporate Office & Dispatch
+          {/* Col 4: Direct Dispatch Hotline */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">
+              Direct Contact
             </h4>
-            
-            <div className="space-y-2.5 text-slate-300">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>950 Peninsula Corporate Cir<br />Boca Raton, FL 33487</span>
+            <div className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+              <a
+                href="tel:13059224210"
+                className="flex items-center gap-2 text-emerald-400 font-bold hover:underline"
+              >
+                <Phone className="w-4 h-4 flex-shrink-0" />
+                <span>(305) 922-4210</span>
+              </a>
+
+              <a
+                href="mailto:service@iguanacontrolauthority.com"
+                className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
+              >
+                <Mail className="w-4 h-4 flex-shrink-0 text-emerald-400" />
+                <span className="truncate">service@iguanacontrolauthority.com</span>
+              </a>
+
+              <div className="flex items-start gap-2 text-slate-400 pt-1">
+                <MapPin className="w-4 h-4 flex-shrink-0 text-emerald-400 mt-0.5" />
+                <span>
+                  950 Peninsula Corporate Cir<br />
+                  Boca Raton, FL 33487
+                </span>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <a
-                  href="tel:13059224210"
-                  onClick={() => trackPhoneCall('Footer Phone')}
-                  className="hover:text-emerald-400 transition-colors font-bold text-white"
-                >
-                  (305) 922-4210
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <a
-                  href="mailto:service@iguanacontrolauthority.com"
-                  className="hover:text-emerald-400 transition-colors truncate"
-                >
-                  service@iguanacontrolauthority.com
-                </a>
-              </div>
-
-              <div className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>Mon – Sun: 8:00 AM – 6:30 PM<br /><span className="text-emerald-400 text-[11px]">7 Days / Appointments Recommended</span></span>
+              <div className="flex items-center gap-2 text-slate-400 pt-1">
+                <Clock className="w-4 h-4 flex-shrink-0 text-emerald-400" />
+                <span>Mon–Sun: 8:00 AM – 6:30 PM</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Legal & Subfooter */}
-        <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-          <div>
-            © {new Date().getFullYear()} Iguana Control Authority LLC. All Rights Reserved. Humane Wildlife Control & Property Defense.
-          </div>
-
-          <div className="flex items-center gap-4">
-            <a href="https://iguanacontrolauthority.com/sitemap.xml" className="hover:text-slate-300">Sitemap</a>
-            <span>•</span>
-            <span>FWC Compliant Invasive Species Eradication</span>
-            <span>•</span>
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold"
-            >
-              <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5" />
-            </button>
-          </div>
+        {/* FWC Compliance Banner */}
+        <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-400 space-y-2">
+          <p>
+            Iguana Control Authority operates in full compliance with Florida Fish and Wildlife Conservation Commission (FWC) regulations. Green iguanas are an invasive species under Florida law (Rule 68-5.006 F.A.C.). All removals are conducted strictly through humane, legal methods on private property.
+          </p>
         </div>
+
+        {/* Copyright & Scroll to Top */}
+        <div className="mt-8 pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>
+            © {new Date().getFullYear()} Iguana Control Authority. All rights reserved. Licensed & Insured.
+          </p>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 text-slate-400 hover:text-emerald-400 transition-colors"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
       </div>
     </footer>
   );

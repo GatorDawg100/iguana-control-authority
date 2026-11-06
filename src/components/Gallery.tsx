@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Camera, Eye, X, ZoomIn, CheckCircle2 } from 'lucide-react';
+import { Camera, Eye, X, CheckCircle2 } from 'lucide-react';
 
 interface GalleryItem {
   id: number;
@@ -65,35 +65,27 @@ export const Gallery: React.FC = () => {
     },
     {
       id: 7,
-      title: 'Invasive Iguana in Palm Canopy',
+      title: 'Pool Patio Live Trap Deployment',
       category: 'trapping',
-      image: '/images/palm-tree-iguana.jpg',
-      caption: 'Green iguana perched in palm fronds. Our custom aluminum tree wrap barriers prevent iguanas from scaling trees and jumping onto roof tiles.',
-      tag: 'Tree Barrier Target',
+      image: '/images/pool-patio-hd.jpg',
+      caption: 'Discreet humane cage trap installed beside a screened pool lanai to safely capture iguanas that drop from rooflines and damage pool screening.',
+      tag: 'Pool Defense',
     },
     {
       id: 8,
-      title: 'Large Male Invasive Specimen',
+      title: 'Adult Male Invasive Iguana Specimen',
       category: 'waterfront',
       image: '/images/large-green-iguana.jpg',
-      caption: 'Mature invasive green iguana measuring over 4.5 feet removed from a residential turf lawn before it could burrow underneath an adjacent seawall cap.',
+      caption: 'Over 5-foot adult male green iguana extracted from a South Florida residential canal hedge before it could dig breeding burrows beneath the pool deck.',
       tag: 'Invasive Control',
     },
     {
       id: 9,
-      title: 'Multi-Iguana Landscape Remediation',
+      title: 'Garden Hedge Corridor Trap',
       category: 'trapping',
-      image: '/images/successful-removal.jpg',
-      caption: 'Multiple invasive iguanas safely removed in a single dispatch from a residential property suffering from heavy ornamental plant and flower damage.',
-      tag: 'Multi-Removal',
-    },
-    {
-      id: 10,
-      title: 'Residential Lawn Live Trapping',
-      category: 'trapping',
-      image: '/images/trap-lawn.jpg',
-      caption: 'Safe, humane cage trap deployed on a residential turf lawn to protect families and pets from Salmonella-contaminated droppings.',
-      tag: 'Lawn Trapping',
+      image: '/images/trap-garden.jpg',
+      caption: 'Multi-catch live trap placed along an active travel route between a canal seawall and prized hibiscus landscaping.',
+      tag: 'Garden Protection',
     },
   ];
 
@@ -102,20 +94,20 @@ export const Gallery: React.FC = () => {
     : items.filter(item => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-20 bg-slate-950 border-b border-slate-800 relative">
+    <section id="gallery" className="py-16 sm:py-20 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-3">
-            <Camera className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold mb-3 shadow-sm">
+            <Camera className="w-3.5 h-3.5 text-emerald-600" />
             <span>Field Work Showcase</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading uppercase tracking-wide">
-            Real Results From South Florida Jobs
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 font-heading uppercase tracking-wide">
+            Real Results From South Florida Properties
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base mt-2">
-            No stock photos or generic promises. See authentic photos of our waterfront captures, dock infestations, humane cage traps, and field operations.
+          <p className="text-slate-600 text-sm sm:text-base mt-2">
+            No stock photos. See authentic images from our waterfront sweeps, dock captures, humane cage traps, and dispatched service truck.
           </p>
         </div>
 
@@ -125,16 +117,16 @@ export const Gallery: React.FC = () => {
             { id: 'all', label: 'All Photos' },
             { id: 'waterfront', label: 'Waterfront & Seawalls' },
             { id: 'trapping', label: 'Humane Trapping' },
-            { id: 'fleet', label: 'Fleet & Dispatch' },
-            { id: 'equipment', label: 'Professional Equipment' },
+            { id: 'fleet', label: 'Fleet & Service Truck' },
+            { id: 'equipment', label: 'Precision Equipment' },
           ].map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 activeCategory === cat.id
-                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-950'
-                  : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+                  ? 'bg-emerald-600 text-white shadow-md'
+                  : 'bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200'
               }`}
             >
               {cat.label}
@@ -143,98 +135,92 @@ export const Gallery: React.FC = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
             <div
               key={item.id}
               onClick={() => setActiveModalItem(item)}
-              className="group cursor-pointer rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-emerald-500/50 shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1"
+              className="group cursor-pointer rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 hover:border-emerald-500/50 shadow-sm hover:shadow-lg transition-all flex flex-col"
             >
-              <div className="relative h-56 overflow-hidden bg-slate-950">
+              <div className="relative h-60 sm:h-64 overflow-hidden bg-slate-200">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/50 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <div className="p-2.5 rounded-full bg-emerald-600/90 text-white shadow-lg backdrop-blur-sm transform scale-90 group-hover:scale-100 transition-transform">
-                    <ZoomIn className="w-5 h-5" />
-                  </div>
-                </div>
-
-                <div className="absolute top-2.5 left-2.5 bg-slate-950/80 backdrop-blur-md px-2.5 py-1 rounded text-[11px] font-bold text-amber-400 border border-slate-800">
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-bold text-emerald-800 shadow-sm border border-slate-200">
                   {item.tag}
+                </div>
+                <div className="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="bg-white/95 rounded-full p-2.5 text-slate-900 shadow-lg">
+                    <Eye className="w-5 h-5" />
+                  </div>
                 </div>
               </div>
 
               <div className="p-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <h4 className="font-heading text-base font-bold text-white group-hover:text-emerald-400 transition-colors mb-1">
+                  <h3 className="font-bold text-slate-900 text-sm group-hover:text-emerald-700 transition-colors">
                     {item.title}
-                  </h4>
-                  <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                  </h3>
+                  <p className="text-xs text-slate-600 mt-1 line-clamp-2">
                     {item.caption}
                   </p>
                 </div>
-                <div className="pt-3 mt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-                  <span className="text-emerald-400 font-semibold">Click to enlarge</span>
-                  <Eye className="w-3.5 h-3.5 text-slate-500" />
+                <div className="mt-3 flex items-center gap-1.5 text-emerald-700 font-bold text-xs pt-2 border-t border-slate-200/60">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>Verified Field Documentation</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Modal Lightbox */}
+        {/* Modal Zoom */}
         {activeModalItem && (
           <div
-            className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
             onClick={() => setActiveModalItem(null)}
           >
             <div
-              className="bg-slate-900 border border-slate-700 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl relative"
+              className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                type="button"
-                onClick={() => setActiveModalItem(null)}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-slate-950/80 hover:bg-slate-800 text-white border border-slate-700 transition-colors"
-                aria-label="Close modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="max-h-[65vh] bg-slate-950 flex items-center justify-center overflow-hidden">
+              <div className="relative max-h-[65vh] bg-slate-900 flex items-center justify-center overflow-hidden">
                 <img
                   src={activeModalItem.image}
                   alt={activeModalItem.title}
-                  className="w-full h-full object-contain max-h-[65vh]"
+                  className="max-h-[65vh] w-auto object-contain"
                 />
+                <button
+                  onClick={() => setActiveModalItem(null)}
+                  className="absolute top-4 right-4 bg-white/90 hover:bg-white text-slate-900 p-2 rounded-full shadow-lg transition-all"
+                  aria-label="Close image modal"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
-              <div className="p-6 space-y-2 bg-slate-900 border-t border-slate-800">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded border border-amber-400/20">
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                     {activeModalItem.tag}
                   </span>
-                  <span className="text-xs text-slate-400">FWC Compliant Field Work</span>
                 </div>
-                <h3 className="text-xl font-bold text-white font-heading">
+                <h3 className="text-xl font-bold text-slate-900">
                   {activeModalItem.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
                   {activeModalItem.caption}
                 </p>
-                <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-800/80">
-                  <div className="flex items-center gap-2 text-xs text-slate-400">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    <span>Free on-site estimate available for your property</span>
-                  </div>
+                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs text-slate-500">Iguana Control Authority • Boca Raton, FL</span>
                   <a
                     href="tel:13059224210"
-                    className="w-full sm:w-auto px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider text-center"
+                    className="text-xs font-bold text-emerald-700 hover:underline"
                   >
-                    Call: (305) 922-4210
+                    Call for Inspection: (305) 922-4210
                   </a>
                 </div>
               </div>

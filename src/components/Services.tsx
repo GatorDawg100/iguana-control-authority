@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Anchor, ShieldCheck, TreePine, Building2, Shovel, Sparkles, Phone, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { Anchor, ShieldCheck, TreePine, Building2, Shovel, Sparkles, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
 import { trackServiceView, trackPhoneCall } from '../utils/analytics';
 
 export const Services: React.FC = () => {
@@ -10,109 +10,109 @@ export const Services: React.FC = () => {
       tagline: 'Stop catastrophic canal bank collapse and dock fouling',
       icon: Anchor,
       image: '/images/canal-seawall-capture.jpg',
-      problem: 'Iguanas dig extensive burrow networks behind seawalls, washing out backfill soil into canals. Over time, this causes concrete seawall caps to crack, lawns to cave in, and repair bills to exceed $15,000–$40,000.',
-      solution: 'Our wildlife specialists conduct specialized waterfront sweeps, trap adult iguanas along dock pilings, excavate burrows, and install anti-burrow riprap barriers.',
+      problem: 'Iguanas dig deep burrow networks behind concrete seawalls, causing soil erosion, sinkholes, and costly seawall collapses exceeding $15,000–$40,000.',
+      solution: 'We conduct waterfront captures, extract iguanas along dock pilings, excavate active burrows, and reinforce vulnerable points.',
       benefits: [
-        'Protects marine seawalls from sinkholes & backfill erosion',
-        'Eliminates dangerous slipping hazards on docks & boat lifts',
-        'FWC compliant humane capture along waterfronts',
+        'Protects seawall caps and backfill soil',
+        'Eliminates dock slipping and hygiene hazards',
+        'FWC compliant humane waterfront capture',
       ],
     },
     {
       id: 2,
       title: 'Humane Live Trapping & Eradication',
-      tagline: 'Ethical, FWC-compliant capture for residential estates',
+      tagline: 'Safe, ethical capture for residential yards & pool patios',
       icon: ShieldCheck,
       image: '/images/humane-trap.jpg',
-      problem: 'Iguanas swarm residential yards, basking on pool decks, defecating near outdoor kitchens, eating hibiscus and orchids, and carrying Salmonella bacteria that endanger pets and young children.',
-      solution: 'We deploy professional multi-catch live cages, natural bait lures, and precision capture equipment directly from our branded service truck.',
+      problem: 'Invasive iguanas take over pool decks, defecate in swimming pools, strip expensive ornamental flowers, and transmit Salmonella to pets and children.',
+      solution: 'We deploy professional multi-catch live cages, natural food lures, and precision capture equipment directly from our branded service truck.',
       benefits: [
         'Safe for domestic pets, children, and native wildlife',
-        '100% legal under Florida Fish and Wildlife Conservation rules',
-        'Daily trap monitoring and rapid removal',
+        '100% legal under Florida state wildlife rules',
+        'Routine trap monitoring and rapid removal',
       ],
     },
     {
       id: 3,
-      title: 'Tree Wrapping & Anti-Climb Barriers',
-      tagline: 'Prevent roof, lanai, and palm canopy infestations',
+      title: 'Tree Wrapping & Roof Exclusion',
+      tagline: 'Stop iguanas from climbing palms, roofs, and pool cages',
       icon: TreePine,
       image: '/images/large-green-iguana.jpg',
-      problem: 'Iguanas use palm trees, ficus hedges, and sea grapes as ladders to jump onto roofs, damage barrel tiles, block gutters, and drop down inside screened pool cages.',
-      solution: 'We install custom-fitted slick aluminum sheet wraps on tree trunks and dock pilings that prevent iguanas from gripping and climbing upward.',
+      problem: 'Iguanas climb palm trees, sea grapes, and ficus hedges to access roofs, break barrel tiles, clog rain gutters, and drop into screened pool lanais.',
+      solution: 'We install custom-cut aluminum sheet barriers around tree trunks and dock pilings that physically block iguanas from climbing upward.',
       benefits: [
-        'Permanent mechanical exclusion without harmful chemicals',
-        'Weather-resistant materials matched to your landscape aesthetics',
-        'Stops roof jumping and pool enclosure penetrations',
+        'Permanent mechanical exclusion without harsh chemicals',
+        'Aesthetic finish that blends seamlessly with palms',
+        'Prevents roof jumping and pool cage penetrations',
       ],
     },
     {
       id: 4,
       title: 'Commercial, HOA & Marina Programs',
-      tagline: 'Proactive community-wide management & education',
+      tagline: 'Comprehensive population control for communities & resorts',
       icon: Building2,
       image: '/images/service-truck.jpg',
-      problem: 'HOA communities, golf courses, resorts, and commercial plazas face liability risks, landscaping damage, and resident complaints when iguana colonies multiply unchecked.',
-      solution: 'Custom ongoing service agreements including recurring property inspections, colony reduction, resident educational materials, and board reporting.',
+      problem: 'HOA communities, golf courses, resorts, and commercial marinas face liability, landscape replacement costs, and resident complaints.',
+      solution: 'Tailored recurring service plans with scheduled service truck visits, proactive population suppression, and clear documentation.',
       benefits: [
-        'Scheduled regular sweeps by our branded service truck',
+        'Scheduled sweeps by our equipped service truck',
         'Reduces HOA landscaping replacement expenditures',
-        'Compliant documentation for board meetings and insurers',
+        'Transparent reporting for board meetings & insurers',
       ],
     },
     {
       id: 5,
-      title: 'Underground Burrow & Egg Nest Destruction',
-      tagline: 'Eradicate breeding chambers before dozens of eggs hatch',
+      title: 'Burrow Excavation & Nest Destruction',
+      tagline: 'Destroy underground tunnels before female iguanas lay 40+ eggs',
       icon: Shovel,
-      image: '/images/trap-garden.jpg',
-      problem: 'A single adult female iguana can lay 30 to 70 eggs per clutch in deep underground tunnels, ensuring next season’s swarm is exponentially worse.',
-      solution: 'We locate active burrow openings using specialized probes, safely extract nesting females and eggs, and backfill the tunnels with compaction material to prevent re-entry.',
+      image: '/images/dock-infestation-hd.jpg',
+      problem: 'Single female iguanas dig massive underground chambers to deposit up to 70 eggs each spring, creating large subterranean voids under sidewalks.',
+      solution: 'We locate active burrow openings, extract nesting iguanas, and pack tunnels with structural compaction material to prevent re-colonization.',
       benefits: [
-        'Breaks the reproductive breeding cycle on your property',
-        'Prevents structural foundation and sidewalk shifting',
-        'Permanent soil stabilization around pools and foundations',
+        'Breaks the rapid breeding cycle on your property',
+        'Prevents sidewalk and pool foundation cracking',
+        'Permanent soil stabilization around foundations',
       ],
     },
     {
       id: 6,
-      title: 'Sanitization & Dropping Decontamination',
-      tagline: 'Eliminate Salmonella hazards from decks and living spaces',
+      title: 'Pool Deck Sanitization & Decontamination',
+      tagline: 'Eliminate Salmonella hazards from decks and outdoor kitchens',
       icon: Sparkles,
-      image: '/images/trap-patio.jpg',
-      problem: 'Iguana feces carry Salmonella and harmful pathogens. Droppings bake in the South Florida sun, staining travertine tiles, contaminating swimming pool water, and causing foul odors.',
-      solution: 'Professional pressure cleaning with hospital-grade, eco-friendly sanitizing solutions to neutralize pathogens and remove territorial scent markers.',
+      image: '/images/pool-patio-hd.jpg',
+      problem: 'Iguana droppings carry Salmonella bacteria. Feces bake in the Florida sun, staining travertine tiles, entering pools, and creating health risks.',
+      solution: 'Professional pressure cleaning and eco-friendly sanitizing to neutralize dangerous bacteria and eliminate scent markers that attract other iguanas.',
       benefits: [
-        'Protects dogs, cats, and barefoot children from bacterial illness',
-        'Removes pheromone markers that attract other wandering iguanas',
-        'Restores the pristine appearance of pool patios and docks',
+        'Protects children and pets from Salmonella',
+        'Removes pheromone scents that attract new iguanas',
+        'Restores the clean, pristine look of your outdoor living area',
       ],
     },
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-900 border-b border-slate-800 relative">
+    <section id="services" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <span className="text-emerald-400 font-bold uppercase tracking-widest text-xs">
-              Specialized Solutions
+            <span className="text-emerald-700 font-extrabold uppercase tracking-widest text-xs">
+              Specialized Property Protection
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading uppercase tracking-wide mt-2">
-              Our Professional Iguana Control Services
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 font-heading uppercase tracking-wide mt-2">
+              Our Professional Iguana Removal Services
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-              We don’t treat iguanas as a side hobby. At <strong className="text-white">Iguana Control Authority</strong>, controlling and removing invasive green iguanas is all we do. Every service is performed with dedicated equipment and strict FWC compliance.
+            <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+              We specialize 100% in invasive green iguana behavior, habitats, and exclusion. Every job is handled with dedicated equipment and strict FWC compliance.
             </p>
           </div>
 
           <div className="flex-shrink-0">
             <a
               href="tel:13059224210"
-              onClick={() => trackPhoneCall('Services Header CTA')}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-emerald-400 font-bold text-sm shadow-md transition-all"
+              onClick={() => trackPhoneCall('Services Header Call CTA')}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all"
             >
               <Phone className="w-4 h-4" />
               <span>Call For Free Estimate: (305) 922-4210</span>
@@ -121,96 +121,63 @@ export const Services: React.FC = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((srv) => {
             const Icon = srv.icon;
             return (
               <div
                 key={srv.id}
-                className="rounded-2xl bg-slate-950 border border-slate-800 hover:border-emerald-600/50 shadow-xl overflow-hidden transition-all duration-300 flex flex-col group hover:-translate-y-1"
-                onMouseEnter={() => trackServiceView(srv.title)}
+                className="rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden"
               >
-                {/* Service Image */}
-                <div className="relative h-48 overflow-hidden bg-slate-900">
+                {/* Service Card Image */}
+                <div className="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
                   <img
                     src={srv.image}
                     alt={srv.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
-                  
-                  <div className="absolute bottom-3 left-3 bg-emerald-950/90 backdrop-blur-md border border-emerald-500/40 p-2 rounded-lg text-emerald-400">
-                    <Icon className="w-5 h-5" />
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-lg text-emerald-800 text-xs font-bold border border-slate-200 shadow-sm flex items-center gap-1.5">
+                    <Icon className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Specialized Service</span>
                   </div>
                 </div>
 
-                {/* Service Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                {/* Card Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-white font-heading mb-1 group-hover:text-emerald-400 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900 font-heading mb-2 group-hover:text-emerald-700 transition-colors">
                       {srv.title}
                     </h3>
-                    <p className="text-xs font-semibold text-amber-400/90 mb-3">
+                    <p className="text-xs sm:text-sm font-semibold text-emerald-700 mb-3">
                       {srv.tagline}
                     </p>
-                    <p className="text-xs text-slate-300 leading-relaxed mb-4">
-                      {srv.problem}
+                    <p className="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                      {srv.solution}
                     </p>
 
-                    <div className="space-y-2 border-t border-slate-800/80 pt-3">
-                      {srv.benefits.map((b, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    {/* Bullet Benefits */}
+                    <div className="space-y-2 border-t border-slate-100 pt-3 mb-5">
+                      {srv.benefits.map((b, i) => (
+                        <div key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                           <span>{b}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <span className="text-[11px] text-slate-400">
-                      Dispatched via Service Truck
-                    </span>
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-emerald-400 hover:text-emerald-300 group-hover:translate-x-0.5 transition-all"
-                    >
-                      <span>Get Estimate</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
+                  <a
+                    href="#contact"
+                    className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-emerald-600 text-slate-800 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all mt-auto"
+                  >
+                    <span>Request Free Estimate</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Free Estimate Banner */}
-        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-950 border border-emerald-800/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-1 text-center md:text-left">
-            <h3 className="text-2xl font-bold text-white font-heading uppercase">
-              Need a Custom Removal or Exclusion Plan?
-            </h3>
-            <p className="text-sm text-slate-300">
-              We provide free on-site inspections for homeowners, HOAs, and businesses across South Florida.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-            <a
-              href="tel:13059224210"
-              onClick={() => trackPhoneCall('Services Bottom CTA')}
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Call Hotline: (305) 922-4210</span>
-            </a>
-            <a
-              href="#contact"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm text-center transition-all"
-            >
-              Request Free Inspection
-            </a>
-          </div>
         </div>
 
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, MessageSquare, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, CheckCircle2, MessageSquare, Sparkles } from 'lucide-react';
 import { trackFormSubmission, trackPhoneCall, trackSms } from '../utils/analytics';
 import confetti from 'canvas-confetti';
 
@@ -9,340 +9,376 @@ export const ContactForm: React.FC = () => {
     phone: '',
     email: '',
     address: '',
-    city: 'Boca Raton',
     county: 'Palm Beach County',
-    serviceType: 'Waterfront Seawall & Dock Defense',
-    urgency: 'Standard (Next 24-48 Hours)',
-    notes: '',
+    serviceType: 'Seawall / Dock Burrowing',
+    urgency: 'Standard (This Week)',
+    message: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    if (!formData.name || !formData.phone) return;
 
-    trackFormSubmission(formData.serviceType, formData.county);
+    setLoading(true);
 
     setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
+      trackFormSubmission(formData.serviceType, formData.county);
 
       confetti({
         particleCount: 80,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ['#10b981', '#34d399', '#f59e0b', '#fbbf24'],
+        colors: ['#059669', '#10b981', '#f59e0b'],
       });
-    }, 400);
+
+      setLoading(false);
+      setSubmitted(true);
+    }, 600);
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-950 relative">
+    <section id="contact" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-3">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Schedule Service • Free On-Site Inspection</span>
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold mb-3 shadow-sm">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Fast Response • Free Property Inspection</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading uppercase tracking-wide">
-            Protect Your Property Today
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 font-heading uppercase tracking-wide">
+            Schedule Your Free On-Site Property Estimate
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base mt-2">
-            Fill out the form below or contact our hotline directly. Our work truck will drive out to inspect your property and provide an ethical, guaranteed solution.
+          <p className="text-slate-600 text-sm sm:text-base mt-2">
+            Call us directly or send a request below. Our equipped work truck dispatches directly to your location across South Florida.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Direct Business Contact Information */}
+          {/* Left Column: Direct Contact Info & Socials */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl space-y-6">
-              <div>
-                <span className="text-emerald-400 font-bold uppercase tracking-wider text-xs">
-                  Direct Contact Information
-                </span>
-                <h3 className="text-2xl font-extrabold text-white font-heading mt-1">
-                  Iguana Control Authority
-                </h3>
-                <p className="text-xs text-amber-400 font-bold mt-0.5">
-                  Licensed & Insured Wildlife Contractors
-                </p>
-              </div>
+            {/* Direct Calling Box */}
+            <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm">
+              <span className="text-xs font-black uppercase tracking-wider text-emerald-700 block mb-2">
+                Fastest Response
+              </span>
+              <h3 className="text-2xl font-black text-slate-900 font-heading mb-3">
+                Call Direct Dispatch Line
+              </h3>
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+                Speak directly with our team to arrange same-day or next-day on-site inspection.
+              </p>
 
-              {/* Contact Methods */}
-              <div className="space-y-4 text-sm text-slate-300">
-                
-                {/* Phone Call - Big & Bold */}
-                <a
-                  href="tel:13059224210"
-                  onClick={() => trackPhoneCall('Contact Section Phone')}
-                  className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/90 border-2 border-emerald-500/50 hover:border-emerald-400 hover:bg-slate-950 transition-all group shadow-lg"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Phone className="w-6 h-6 animate-pulse" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-slate-400 block font-semibold">Direct Phone & Emergency Dispatch</span>
-                    <strong className="text-white text-xl sm:text-2xl group-hover:text-emerald-400 transition-colors font-heading block">
-                      (305) 922-4210
-                    </strong>
-                    <span className="text-xs text-emerald-400 block mt-0.5 font-bold">Tap to call directly • 7 Days a Week</span>
-                  </div>
-                </a>
+              {/* Big Call Button */}
+              <a
+                href="tel:13059224210"
+                onClick={() => trackPhoneCall('Contact Section Big Phone Button')}
+                className="w-full py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xl flex items-center justify-center gap-3 shadow-md hover:shadow-lg transition-all"
+              >
+                <Phone className="w-6 h-6 animate-bounce" />
+                <span>(305) 922-4210</span>
+              </a>
 
-                {/* Text / SMS */}
+              {/* SMS Option */}
+              <div className="mt-3">
                 <a
                   href="sms:13059224210"
                   onClick={() => trackSms('Contact Section SMS')}
-                  className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-amber-500/40 hover:bg-slate-950 transition-all group"
+                  className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-amber-950/60 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <MessageSquare className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-slate-400 block font-medium">Fast SMS Photo Evaluation</span>
-                    <strong className="text-white text-base group-hover:text-amber-400 transition-colors">
-                      Text (305) 922-4210
-                    </strong>
-                    <span className="text-[11px] text-amber-300 block mt-0.5 font-semibold">Send photos of burrows or lizards</span>
-                  </div>
+                  <MessageSquare className="w-4 h-4 text-emerald-600" />
+                  <span>Text Photos To (305) 922-4210</span>
                 </a>
-
-                {/* Email */}
-                <a
-                  href="mailto:service@iguanacontrolauthority.com"
-                  className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-slate-700 hover:bg-slate-950 transition-all group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Mail className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <span className="text-xs text-slate-400 block font-medium">Service Desk & Proposals</span>
-                    <span className="text-white text-xs sm:text-sm font-semibold truncate block">
-                      service@iguanacontrolauthority.com
-                    </span>
-                    <span className="text-[11px] text-slate-400 block mt-0.5">Inquiries, HOA proposals & billing</span>
-                  </div>
-                </a>
-
-                {/* Address */}
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
-                  <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-slate-400 block font-medium">Boca Raton Corporate Office</span>
-                    <address className="not-italic text-white text-sm font-semibold">
-                      950 Peninsula Corporate Cir<br />
-                      Boca Raton, FL 33487
-                    </address>
-                  </div>
-                </div>
-
-                {/* Operating Hours */}
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
-                  <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 flex-shrink-0">
-                    <Clock className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-slate-400 block font-medium">Hours of Operation</span>
-                    <span className="text-white text-sm font-semibold block">
-                      Monday – Sunday: 8:00 AM – 6:30 PM
-                    </span>
-                    <span className="text-[11px] text-emerald-400 block mt-0.5">
-                      7 Days a Week • Appointments Recommended
-                    </span>
-                  </div>
-                </div>
-
               </div>
+            </div>
+
+            {/* Business Details Card */}
+            <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+              <h4 className="text-base font-bold text-slate-900 font-heading border-b border-slate-100 pb-3">
+                Business Contact Details
+              </h4>
+
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs text-slate-500 font-semibold block uppercase tracking-wider">Email Address</span>
+                  <a
+                    href="mailto:service@iguanacontrolauthority.com"
+                    className="text-sm font-bold text-slate-900 hover:text-emerald-700 transition-colors"
+                  >
+                    service@iguanacontrolauthority.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs text-slate-500 font-semibold block uppercase tracking-wider">Headquarters</span>
+                  <p className="text-sm font-bold text-slate-900">
+                    950 Peninsula Corporate Cir<br />
+                    Boca Raton, FL 33487
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs text-slate-500 font-semibold block uppercase tracking-wider">Hours of Operation</span>
+                  <p className="text-sm font-bold text-slate-900">
+                    Mon – Sun: 8:00 AM – 6:30 PM<br />
+                    <span className="text-emerald-700 font-semibold text-xs">Open 7 Days A Week</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Official Social Media Links */}
+              <div className="border-t border-slate-100 pt-4">
+                <span className="text-xs text-slate-500 font-semibold block uppercase tracking-wider mb-2.5">
+                  Follow Our Field Work on Social Media
+                </span>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/iguanacontrolauthority"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-50 hover:bg-pink-100 border border-pink-200 text-pink-700 text-xs font-bold transition-all shadow-xs"
+                  >
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    <span>Instagram</span>
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61584350266019#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 text-xs font-bold transition-all shadow-xs"
+                  >
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                    <span>Facebook</span>
+                  </a>
+                </div>
+              </div>
+
             </div>
 
           </div>
 
-          {/* Right Column: Lead Capture Form */}
-          <div className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
-            
-            {submitted ? (
-              <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
-                <div className="w-16 h-16 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-10 h-10" />
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white font-heading uppercase">
-                  Thank You, {formData.name || 'Friend'}!
-                </h3>
-                <p className="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
-                  Your property inspection request has been logged. Our wildlife specialists will review your details and contact you shortly at <strong className="text-white">{formData.phone}</strong> to confirm your appointment.
-                </p>
-
-                <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 max-w-md mx-auto text-xs text-left space-y-1.5 text-slate-300">
-                  <div className="text-slate-400 font-bold uppercase text-[10px]">Requested Details:</div>
-                  <div>• Service: <strong>{formData.serviceType}</strong></div>
-                  <div>• County: <strong>{formData.county} ({formData.city})</strong></div>
-                  <div>• Priority: <strong>{formData.urgency}</strong></div>
-                </div>
-
-                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <a
-                    href="tel:13059224210"
-                    onClick={() => trackPhoneCall('Post Submit Call')}
-                    className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-4 h-4" />
-                    <span>Call Hotline Directly: (305) 922-4210</span>
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs text-center"
-                  >
-                    Submit Another Request
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="border-b border-slate-800 pb-4 mb-4">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white font-heading uppercase tracking-wide">
-                    Request A Free On-Site Inspection
+          {/* Right Column: Clean White Inspection Request Form */}
+          <div className="lg:col-span-7">
+            <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-10 shadow-xl">
+              
+              {submitted ? (
+                <div className="text-center py-12 space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-10 h-10" />
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 font-heading">
+                    Property Estimate Request Received!
                   </h3>
-                  <p className="text-xs text-slate-400 mt-1">
-                    No credit card required. We will assess your infestation and provide a tailored plan.
+                  <p className="text-slate-600 max-w-md mx-auto text-sm leading-relaxed">
+                    Thank you. An Iguana Control Authority specialist will contact you shortly to confirm your inspection time.
                   </p>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. John Doe"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="(305) 922-4210"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="name@example.com"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      County
-                    </label>
-                    <select
-                      value={formData.county}
-                      onChange={(e) => setFormData({ ...formData, county: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-500"
+                  <div className="pt-4">
+                    <a
+                      href="tel:13059224210"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all"
                     >
-                      <option value="Palm Beach County">Palm Beach County</option>
-                      <option value="Broward County">Broward County</option>
-                      <option value="Miami-Dade County">Miami-Dade County</option>
-                      <option value="Monroe County">Monroe County (Florida Keys)</option>
-                    </select>
+                      <Phone className="w-4 h-4" />
+                      <span>Need immediate help? Call (305) 922-4210</span>
+                    </a>
                   </div>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="border-b border-slate-100 pb-4 mb-2">
+                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 font-heading">
+                      Request Free On-Site Inspection
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                      Fill out this quick form and our dispatched team will contact you promptly.
+                    </p>
+                  </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        Your Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="e.g. Michael Smith"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="(561) 000-0000"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        Email Address (Optional)
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="youremail@example.com"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        County / Area *
+                      </label>
+                      <select
+                        name="county"
+                        value={formData.county}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
+                      >
+                        <option value="Palm Beach County">Palm Beach County (Boca Raton, Delray, etc.)</option>
+                        <option value="Broward County">Broward County (Ft Lauderdale, Pompano, etc.)</option>
+                        <option value="Miami-Dade County">Miami-Dade County (Miami, Coral Gables, etc.)</option>
+                        <option value="Monroe County">Monroe County (Florida Keys)</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      Street Address or City
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                      Property Address or City
                     </label>
                     <input
                       type="text"
+                      name="address"
                       value={formData.address}
-                      onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      placeholder="e.g. 950 Peninsula Corp, Boca Raton"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                      onChange={handleChange}
+                      placeholder="e.g. 123 Ocean Blvd, Boca Raton"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      Service Required
-                    </label>
-                    <select
-                      value={formData.serviceType}
-                      onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-500"
-                    >
-                      <option value="Waterfront Seawall & Dock Defense">Waterfront Seawall & Dock Defense</option>
-                      <option value="Humane Live Trapping & Eradication">Humane Live Trapping & Eradication</option>
-                      <option value="Tree Wrapping & Anti-Climb Barriers">Tree Wrapping & Anti-Climb Barriers</option>
-                      <option value="Commercial, HOA & Marina Programs">Commercial, HOA & Marina Programs</option>
-                      <option value="Underground Burrow & Egg Nest Destruction">Burrow & Egg Nest Destruction</option>
-                      <option value="Pool Deck Sanitization & Dropping Cleanup">Pool Deck / Patio Sanitization</option>
-                    </select>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        Primary Issue
+                      </label>
+                      <select
+                        name="serviceType"
+                        value={formData.serviceType}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
+                      >
+                        <option value="Seawall / Dock Burrowing">Seawall / Dock Burrowing</option>
+                        <option value="Pool Deck / Patio Infestation">Pool Deck / Patio Infestation</option>
+                        <option value="Roof / Tree Climbing">Roof / Tree Climbing</option>
+                        <option value="Commercial / HOA Program">Commercial / HOA Program</option>
+                        <option value="Garden & Landscaping Destruction">Garden & Landscaping Destruction</option>
+                        <option value="Other / General Trapping">Other / General Trapping</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        Urgency Level
+                      </label>
+                      <select
+                        name="urgency"
+                        value={formData.urgency}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
+                      >
+                        <option value="Emergency (Same-Day / Iguana in Home or Pool)">Emergency (Same-Day / In Pool or Home)</option>
+                        <option value="Standard (This Week)">Standard (This Week)</option>
+                        <option value="Planning / Future Quote">Planning / Future Quote</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    Describe Your Iguana Issue & Property Details
-                  </label>
-                  <textarea
-                    rows={3}
-                    value={formData.notes}
-                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    placeholder="Tell us what you are seeing (e.g., burrows near the seawall, iguanas on the roof, droppings on the pool patio, eating orchids, etc.)..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                  />
-                </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                      Additional Details (Optional)
+                    </label>
+                    <textarea
+                      name="message"
+                      rows={3}
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about the number of iguanas, location on the property, or any specific concerns..."
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-hidden focus:border-emerald-500 focus:bg-white text-sm transition-all"
+                    />
+                  </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-emerald-950/80 transition-all transform hover:-translate-y-0.5 disabled:opacity-50"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? 'Submitting Details...' : 'Submit Request For Free On-Site Inspection'}</span>
-                </button>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-black text-base uppercase tracking-wider shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                  >
+                    {loading ? (
+                      <span>Submitting Request...</span>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        <span>Submit Free Estimate Request</span>
+                      </>
+                    )}
+                  </button>
 
-                <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1">
-                  <span className="flex items-center gap-1 font-semibold text-emerald-400">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    100% Free & No Obligation
-                  </span>
-                  <span>Direct Response from Wildlife Team</span>
-                </div>
-              </form>
-            )}
+                  <div className="flex items-center justify-center gap-4 text-[11px] text-slate-500 pt-2 font-medium">
+                    <span>🔒 100% Privacy Guaranteed</span>
+                    <span>•</span>
+                    <span>Zero Obligations</span>
+                    <span>•</span>
+                    <span>No Spam</span>
+                  </div>
+                </form>
+              )}
 
+            </div>
           </div>
 
         </div>

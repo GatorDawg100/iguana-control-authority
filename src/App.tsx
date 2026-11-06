@@ -2,9 +2,7 @@ import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
-import { ThreatEducation } from './components/ThreatEducation';
 import { Services } from './components/Services';
-import { AssessmentCalculator } from './components/AssessmentCalculator';
 import { Gallery } from './components/Gallery';
 import { WhyUs } from './components/WhyUs';
 import { ServiceAreas } from './components/ServiceAreas';
@@ -17,26 +15,20 @@ import { CookieConsent } from './components/CookieConsent';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-emerald-500 selection:text-white pb-14 lg:pb-0">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-emerald-500 selection:text-white pb-14 lg:pb-0">
       {/* Navigation */}
       <Navbar />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Hero Section with Live Florida Environment & Huge Action Calling Bar */}
+        {/* Hero Section with Clearly Visible Florida Environment Background & Giant CTA */}
         <Hero />
 
         {/* Quick Credibility Trust Bar */}
         <TrustBar />
 
-        {/* Why Green Iguanas Are a Costly Threat (Educational & Legal Guidance) */}
-        <ThreatEducation />
-
         {/* Core Specialized Services */}
         <Services />
-
-        {/* Interactive Property Assessment & Cost Guidance Calculator */}
-        <AssessmentCalculator />
 
         {/* Real Field Showcase / Authentic Photo Gallery */}
         <Gallery />
@@ -53,17 +45,17 @@ export function App() {
         {/* Frequently Asked Questions */}
         <Faq />
 
-        {/* Estimate Booking & Direct Contact Form */}
+        {/* Estimate Booking & Direct Contact Form with Social Links */}
         <ContactForm />
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* Mobile Sticky Call & Estimate Bar */}
+      {/* Sticky Mobile Call & Estimate Bar */}
       <StickyMobileBar />
 
-      {/* Privacy Cookie Consent Banner */}
+      {/* Privacy & Cookie Consent */}
       <CookieConsent />
     </div>
   );

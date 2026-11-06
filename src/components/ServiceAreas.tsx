@@ -8,8 +8,8 @@ export const ServiceAreas: React.FC = () => {
   const counties = {
     'palm-beach': {
       name: 'Palm Beach County',
-      hq: 'Company Headquarters in Boca Raton (950 Peninsula Corporate Cir)',
-      description: 'Full residential and commercial dispatch across North & South Palm Beach County. We protect luxury waterfront properties, golf course communities, and Intracoastal seawalls.',
+      hq: 'Company Headquarters: 950 Peninsula Corporate Cir, Boca Raton, FL 33487',
+      description: 'Daily residential and commercial service dispatch across Palm Beach County. We protect luxury waterfront properties, golf communities, and Intracoastal seawalls from aggressive iguana burrowing.',
       cities: [
         'Boca Raton (HQ)',
         'Delray Beach',
@@ -28,8 +28,8 @@ export const ServiceAreas: React.FC = () => {
     },
     'broward': {
       name: 'Broward County',
-      hq: 'Daily Truck Routes Across Fort Lauderdale & Surrounding Waterfronts',
-      description: 'Broward County’s extensive 300+ miles of inland waterways and canals make it ground zero for iguana burrowing. We provide intensive seawall defense and HOA patrol.',
+      hq: 'Daily Truck Routes Across Fort Lauderdale & Inland Waterways',
+      description: 'Broward County’s 300+ miles of inland canals make it a prime hotspot for iguana colonies. We provide specialized seawall defense, dock sweeps, and HOA population control.',
       cities: [
         'Fort Lauderdale',
         'Pompano Beach',
@@ -48,63 +48,64 @@ export const ServiceAreas: React.FC = () => {
     },
     'miami-dade': {
       name: 'Miami-Dade County',
-      hq: 'Rapid Dispatch to Coastal Estates, Marinas & Commercial Properties',
-      description: 'From Biscayne Bay docks to lush Coral Gables estates, we remediate severe green iguana infestations on roofs, lanais, and botanical gardens.',
+      hq: 'Direct Mobile Dispatch Across Coastal & Bayfront Properties',
+      description: 'From Biscayne Bay seawalls to luxury estate gardens, our specialists deploy humane traps, remove mature iguanas, and install tree climb barriers across greater Miami.',
       cities: [
         'Miami',
         'Coral Gables',
-        'Key Biscayne',
         'Aventura',
+        'Sunny Isles Beach',
+        'Key Biscayne',
+        'Miami Beach',
         'Coconut Grove',
         'Pinecrest',
-        'Sunny Isles Beach',
         'Bal Harbour',
-        'Miami Beach',
+        'Surfside',
         'Palmetto Bay',
-        'South Miami',
-        'Brickell / Downtown',
+        'North Miami',
       ],
       dispatchTime: 'Daily Scheduled Sweeps',
     },
     'monroe': {
-      name: 'Monroe County (Florida Keys)',
-      hq: 'Island Waterfront & Resort Protection',
-      description: 'The Florida Keys experience dense iguana pressure on mangroves, boat docks, and resort grounds. We provide scheduled multi-property trapping and ongoing defense.',
+      name: 'Monroe County (The Florida Keys)',
+      hq: 'Specialized Island & Canal Seawall Eradication',
+      description: 'Serving the Upper and Middle Keys. Protecting mangrove shorelines, boat basins, private docks, and resort grounds from invasive green iguana destruction.',
       cities: [
         'Key Largo',
         'Islamorada',
         'Tavernier',
         'Marathon',
         'Duck Key',
-        'Lower Keys',
-        'Key West (Special Request)',
+        'Big Pine Key',
+        'Key West',
+        'Ocean Reef Club',
       ],
-      dispatchTime: 'Weekly Dedicated Island Sweeps',
+      dispatchTime: 'Weekly Dedicated Expeditions',
     },
   };
 
   const current = counties[activeCounty];
 
   return (
-    <section id="areas" className="py-20 bg-slate-950 border-b border-slate-800 relative">
+    <section id="service-areas" className="py-16 sm:py-20 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-3">
-            <Navigation className="w-3.5 h-3.5" />
-            <span>South Florida Regional Coverage</span>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold mb-3 shadow-sm">
+            <Truck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Mobile Service Fleet Coverage</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading uppercase tracking-wide">
-            Areas We Serve In South Florida
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 font-heading uppercase tracking-wide">
+            Where We Dispatch In South Florida
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base mt-2">
-            Our branded work truck drives directly to your location. Based out of <strong className="text-white">Boca Raton</strong>, our service fleet covers Palm Beach, Broward, Miami-Dade, and Monroe Counties.
+          <p className="text-slate-600 text-sm sm:text-base mt-2">
+            Our equipped work truck drives directly to your location. Based out of <strong className="text-slate-900">Boca Raton</strong>, we cover Palm Beach, Broward, Miami-Dade, and Monroe Counties.
           </p>
         </div>
 
-        {/* County Tabs */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 max-w-4xl mx-auto">
+        {/* County Selection Buttons */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8 max-w-4xl mx-auto">
           {[
             { id: 'palm-beach', label: 'Palm Beach County', badge: 'HQ' },
             { id: 'broward', label: 'Broward County', badge: 'Daily' },
@@ -116,13 +117,13 @@ export const ServiceAreas: React.FC = () => {
               onClick={() => setActiveCounty(tab.id as any)}
               className={`p-3.5 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 ${
                 activeCounty === tab.id
-                  ? 'bg-emerald-600 border-emerald-500 text-white shadow-lg shadow-emerald-950'
-                  : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+                  ? 'bg-emerald-600 border-emerald-600 text-white shadow-md'
+                  : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
               <span className="text-xs sm:text-sm font-bold uppercase tracking-wider">{tab.label}</span>
               <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                activeCounty === tab.id ? 'bg-emerald-950/80 text-emerald-200' : 'bg-slate-800 text-slate-400'
+                activeCounty === tab.id ? 'bg-emerald-800 text-emerald-100' : 'bg-slate-200 text-slate-600'
               }`}>
                 {tab.badge}
               </span>
@@ -130,102 +131,87 @@ export const ServiceAreas: React.FC = () => {
           ))}
         </div>
 
-        {/* Selected County Details Card */}
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        {/* County Detail Card */}
+        <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-10 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Info Left */}
-            <div className="lg:col-span-7 space-y-5">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="px-3 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold uppercase tracking-wider">
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 flex items-center gap-1.5">
+                  <Navigation className="w-3 h-3" />
                   {current.dispatchTime}
                 </span>
-                <span className="text-xs text-slate-400 flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="text-xs text-slate-600 font-medium">
                   {current.hq}
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-                {current.name} Iguana Removal & Control
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 font-heading">
+                {current.name} Coverage
               </h3>
 
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 {current.description}
               </p>
 
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
-                  Key Cities & Communities Covered:
-                </h4>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {/* City Pill Grid */}
+              <div className="pt-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">
+                  Cities & Communities Serviced:
+                </span>
+                <div className="flex flex-wrap gap-2">
                   {current.cities.map((city, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-slate-200 bg-slate-950/60 p-2 rounded-lg border border-slate-800">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                      <span className="font-medium">{city}</span>
-                    </div>
+                    <span
+                      key={idx}
+                      className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-semibold shadow-xs"
+                    >
+                      <MapPin className="w-3 h-3 text-emerald-600" />
+                      {city}
+                    </span>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-4 flex flex-col sm:flex-row items-center gap-3">
+              {/* Call to Action */}
+              <div className="pt-4 flex flex-col sm:flex-row gap-3">
                 <a
                   href="tel:13059224210"
-                  onClick={() => trackPhoneCall(`Areas - ${current.name}`)}
-                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                  onClick={() => trackPhoneCall(`Service Area Call: ${current.name}`)}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm uppercase tracking-wider shadow-md transition-all"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call For {current.name} Service: (305) 922-4210</span>
+                  <span>Call Dispatch: (305) 922-4210</span>
                 </a>
                 <a
                   href="#contact"
-                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs text-center border border-slate-700 transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-bold text-sm uppercase tracking-wider border border-slate-300 transition-all"
                 >
-                  Schedule On-Site Inspection
+                  <span>Book Free Estimate</span>
                 </a>
               </div>
             </div>
 
-            {/* Truck Dispatch Highlight Right */}
-            <div className="lg:col-span-5 bg-slate-950 rounded-2xl p-6 border border-emerald-900/40 relative overflow-hidden flex flex-col justify-between space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
-                  <Truck className="w-6 h-6" />
+            {/* Right Side Info Box */}
+            <div className="lg:col-span-5 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <h4 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                <Truck className="w-5 h-5 text-emerald-600" />
+                <span>Equipped Fleet On Call</span>
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Our branded service truck is outfitted with commercial-grade live traps, catch poles, burrow compaction supplies, and anti-climb aluminum sheets.
+              </p>
+              <div className="space-y-2.5 border-t border-slate-100 pt-3 text-xs text-slate-700 font-medium">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Serving HOAs, private estates, golf courses & marinas</span>
                 </div>
-                <div>
-                  <h4 className="font-heading text-lg font-bold text-white uppercase">
-                    Direct Mobile Dispatch
-                  </h4>
-                  <p className="text-xs text-slate-400">
-                    We drive to your location with all traps & tools
-                  </p>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>No travel or fuel surcharge for standard service zones</span>
                 </div>
-              </div>
-
-              <div className="rounded-xl overflow-hidden border border-slate-800 relative h-48 bg-slate-900">
-                <img
-                  src="/images/dock-infestation-hd.jpg"
-                  alt="Waterfront Seawall and Dock Service Area"
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute bottom-2 left-2 right-2 bg-slate-950/85 backdrop-blur-sm px-2.5 py-1.5 rounded-lg border border-slate-800 text-[11px] text-slate-300 flex items-center justify-between">
-                  <span className="font-bold text-emerald-400">On-Site Dispatch Fleet</span>
-                  <span className="text-amber-300">Call (305) 922-4210</span>
-                </div>
-              </div>
-
-              <div className="space-y-1.5 text-xs text-slate-300">
-                <div className="flex justify-between border-b border-slate-800/80 py-1">
-                  <span className="text-slate-400">Headquarters Address:</span>
-                  <span className="font-medium text-white text-right">950 Peninsula Corp, Boca Raton 33487</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-800/80 py-1">
-                  <span className="text-slate-400">Service Coverage:</span>
-                  <span className="font-medium text-emerald-400">Tri-County & Florida Keys</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-800/80 py-1">
-                  <span className="text-slate-400">Free Estimates:</span>
-                  <span className="font-medium text-amber-300">Yes, 100% Free On-Site</span>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Boca Raton corporate headquarters (950 Peninsula Corp)</span>
                 </div>
               </div>
             </div>
