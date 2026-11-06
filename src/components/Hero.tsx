@@ -7,37 +7,38 @@ export const Hero: React.FC = () => {
     <section className="relative overflow-hidden min-h-[640px] lg:min-h-[720px] flex items-center justify-center bg-slate-900 border-b border-slate-200">
       
       {/* ========================================================================= */}
-      {/* REAL FLORIDA BACKGROUND IMAGE: IGUANA WITH NICE WATERFRONT BACKGROUND */}
-      {/* 100% Natural, NO white banner, NO white tint wash */}
+      {/* BACKGROUND IMAGE: VIBRANT GREEN IGUANA CLIMBING PALM TREE ON BEACH */}
+      {/* User provided: background-iguana.webp (2000x1125 widescreen) */}
+      {/* NO white banner, NO white tint wash, 100% visible & bright */}
       {/* ========================================================================= */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/florida-hero-live-iguana.jpg"
-          alt="Live invasive iguana with South Florida waterfront canal and luxury yacht background"
-          className="w-full h-full object-cover object-[center_35%] filter brightness-95 contrast-105"
+          src="/images/background-iguana.webp"
+          alt="Invasive green iguana climbing palm tree on tropical South Florida coast"
+          className="w-full h-full object-cover object-center filter brightness-100 contrast-105"
         />
-        {/* Subtle, soft dark gradient only to ensure crisp white text contrast without washing out the photo */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/50" />
+        {/* Soft, minimal gradient for text readability without washing out the photo */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/60" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10 w-full text-center">
         
         {/* Credibility Tag */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-emerald-400/50 text-emerald-300 text-xs font-bold mb-6 shadow-xl">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/75 backdrop-blur-md border border-emerald-400/50 text-emerald-300 text-xs font-bold mb-6 shadow-xl">
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
           <span>FWC Compliant • Licensed & Insured • Rapid Dispatch Truck</span>
         </div>
 
         {/* Main Headline with High-Contrast Drop Shadow */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-heading uppercase leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-heading uppercase leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
           <span className="block text-emerald-300">Iguana Control Authority</span>
-          <span className="block text-2xl sm:text-4xl lg:text-5xl text-white font-extrabold normal-case mt-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+          <span className="block text-2xl sm:text-4xl lg:text-5xl text-white font-extrabold normal-case mt-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
             South Florida's Humane Iguana Removal & Property Defense
           </span>
         </h1>
 
         {/* Clear Sub-headline: Appointments Scheduled Over The Phone */}
-        <p className="mt-4 text-base sm:text-xl text-slate-100 font-semibold max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+        <p className="mt-4 text-base sm:text-xl text-slate-100 font-bold max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
           Protecting waterfront docks, seawalls, pool decks, and tropical landscaping across <strong className="text-white font-black underline decoration-emerald-400 underline-offset-4">Palm Beach, Broward, Miami-Dade & Monroe Counties</strong>. Appointments are scheduled directly over the phone.
         </p>
 
@@ -85,14 +86,14 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Key Trust Highlights */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-6 pt-6 border-t border-white/20 text-xs sm:text-sm text-slate-200 font-semibold drop-shadow-md">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-6 pt-6 border-t border-white/20 text-xs sm:text-sm text-slate-100 font-semibold drop-shadow-md">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               <span>100% Free On-Site Estimates</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Open Mon–Sun 9:00 AM – 6:00 PM</span>
+              <span>Open Mon–Sun 8:00 AM – 6:30 PM</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
