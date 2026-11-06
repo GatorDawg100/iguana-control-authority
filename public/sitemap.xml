@@ -13,22 +13,22 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iguanacontrolauthority.com/#assessment</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iguanacontrolauthority.com/#areas</loc>
+    <loc>https://iguanacontrolauthority.com/#gallery</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://iguanacontrolauthority.com/#gallery</loc>
+    <loc>https://iguanacontrolauthority.com/#why-us</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iguanacontrolauthority.com/#service-areas</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://iguanacontrolauthority.com/#faq</loc>
