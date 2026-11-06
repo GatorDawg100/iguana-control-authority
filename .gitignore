@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# OS and temporary files
+.DS_Store
+*.tmp
+/tmp/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Large media files (videos) exceeding GitHub file limits
+assets/*.MP4
+assets/*.mp4
+assets/*.MOV
+assets/*.mov
+*.MP4
+*.mov
+*.MOV
