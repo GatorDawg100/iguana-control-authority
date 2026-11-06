@@ -98,11 +98,10 @@ export const WhyUs: React.FC = () => {
               <span>Call (305) 922-4210</span>
             </a>
             <a
-              href="#contact"
+              href="sms:13059224210"
               className="py-3.5 px-6 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 border border-emerald-600 transition-all"
             >
-              <span>Schedule Inspection</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Text Photos: (305) 922-4210</span>
             </a>
           </div>
         </div>

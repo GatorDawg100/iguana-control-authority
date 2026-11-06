@@ -111,10 +111,11 @@ export const Navbar: React.FC = () => {
             </a>
 
             <a
-              href="#contact"
+              href="tel:13059224210"
+              onClick={() => trackPhoneCall('Header Free Inspection Call')}
               className="px-4 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-sm transition-all whitespace-nowrap"
             >
-              Free Estimate
+              Free Inspection
             </a>
           </div>
 

@@ -183,10 +183,10 @@ export const ServiceAreas: React.FC = () => {
                   <span>Call Dispatch: (305) 922-4210</span>
                 </a>
                 <a
-                  href="#contact"
+                  href="sms:13059224210"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-bold text-sm uppercase tracking-wider border border-slate-300 transition-all"
                 >
-                  <span>Book Free Estimate</span>
+                  <span>Text Photos For Quote</span>
                 </a>
               </div>
             </div>

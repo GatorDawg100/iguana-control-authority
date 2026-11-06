@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, Calendar } from 'lucide-react';
-import { trackPhoneCall } from '../utils/analytics';
+import { Phone, MessageSquare } from 'lucide-react';
+import { trackPhoneCall, trackSms } from '../utils/analytics';
 
 export const StickyMobileBar: React.FC = () => {
   return (
@@ -15,11 +15,12 @@ export const StickyMobileBar: React.FC = () => {
       </a>
 
       <a
-        href="#contact"
-        className="flex-1 py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
+        href="sms:13059224210"
+        onClick={() => trackSms('Sticky Mobile SMS Bar')}
+        className="flex-1 py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
       >
-        <Calendar className="w-4 h-4" />
-        <span>Free Estimate</span>
+        <MessageSquare className="w-4 h-4 text-amber-400" />
+        <span>Text Photos</span>
       </a>
     </div>
   );

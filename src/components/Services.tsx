@@ -168,11 +168,12 @@ export const Services: React.FC = () => {
                   </div>
 
                   <a
-                    href="#contact"
-                    className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-emerald-600 text-slate-800 hover:text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all mt-auto"
+                    href="tel:13059224210"
+                    onClick={() => trackPhoneCall(`Service Card Call: ${srv.title}`)}
+                    className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-800 hover:text-white border border-emerald-200 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all mt-auto"
                   >
-                    <span>Request Free Estimate</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Call To Schedule: (305) 922-4210</span>
                   </a>
                 </div>
               </div>
