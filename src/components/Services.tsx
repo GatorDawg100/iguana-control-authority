@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, ShieldCheck, TreePine, Building2, Shovel, Sparkles, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Anchor, ShieldCheck, TreePine, Building2, Shovel, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
 import { trackServiceView, trackPhoneCall } from '../utils/analytics';
 
 export const Services: React.FC = () => {
@@ -72,20 +72,6 @@ export const Services: React.FC = () => {
         'Breaks the rapid breeding cycle on your property',
         'Prevents sidewalk and pool foundation cracking',
         'Permanent soil stabilization around foundations',
-      ],
-    },
-    {
-      id: 6,
-      title: 'Pool Deck Sanitization & Decontamination',
-      tagline: 'Eliminate Salmonella hazards from decks and outdoor kitchens',
-      icon: Sparkles,
-      image: '/images/pool-patio-hd.jpg',
-      problem: 'Iguana droppings carry Salmonella bacteria. Feces bake in the Florida sun, staining travertine tiles, entering pools, and creating health risks.',
-      solution: 'Professional pressure cleaning and eco-friendly sanitizing to neutralize dangerous bacteria and eliminate scent markers that attract other iguanas.',
-      benefits: [
-        'Protects children and pets from Salmonella',
-        'Removes pheromone scents that attract new iguanas',
-        'Restores the clean, pristine look of your outdoor living area',
       ],
     },
   ];

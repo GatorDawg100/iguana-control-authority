@@ -79,7 +79,6 @@ export const Footer: React.FC = () => {
               <li><a href="#services" className="hover:text-emerald-400 transition-colors">Tree Wrapping & Barriers</a></li>
               <li><a href="#services" className="hover:text-emerald-400 transition-colors">Commercial & HOA Programs</a></li>
               <li><a href="#services" className="hover:text-emerald-400 transition-colors">Burrow Nest Excavation</a></li>
-              <li><a href="#services" className="hover:text-emerald-400 transition-colors">Pool Deck Sanitization</a></li>
             </ul>
           </div>
 
